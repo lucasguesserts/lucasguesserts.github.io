@@ -116,7 +116,7 @@ skills:
 social:
   - icon: envelope
     icon_pack: fas
-    link: lucasguesser@protonmail.com
+    link: mailto:lucasguesser@protonmail.com
   - icon: graduation-cap
     icon_pack: fas
     link: https://orcid.org/0009-0000-6272-4061
