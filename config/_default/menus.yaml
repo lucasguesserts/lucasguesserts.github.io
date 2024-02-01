@@ -8,17 +8,14 @@ main:
     url: '#about'
     weight: 10
   - name: Skills
-    url: '#skills'
+    url: '#section-skills'
     weight: 20
   - name: Experience
-    url: '#experience'
+    url: '#section-experience'
     weight: 30
   - name: Courses
-    url: '#courses'
+    url: '#section-accomplishments'
     weight: 40
-  - name: Projects
-    url: '#projects'
-    weight: 50
   - name: Contact
     url: '#contact'
     weight: 60
