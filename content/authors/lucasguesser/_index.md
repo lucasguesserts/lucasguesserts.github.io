@@ -9,10 +9,6 @@ name_pronunciation: ˈlukas
 first_name: Lucas
 last_name: Guesser
 
-# Status emoji
-status:
-  icon: ☕️
-
 # Is this the primary user of the site?
 superuser: true
 
@@ -40,21 +36,26 @@ interests:
 education:
   courses:
     - course: MSc in Computer Science
-      institution: Universidade Estadual De Campinas (UNICAMP)
-      year: present
+      institution: Universidade Estadual de Campinas (UNICAMP)
+      year: Present
     - course: BSc in Mechanical Engineering
       institution: Universidade Federal de Santa Catarina (UFSC)
-      year: 2008
+      year: 2020
 
 
 skills:
+  # color pallete
+  # fe7f2d
+  # f0bf23
+  # a1c181
+  # 619b8a
   - name: Programming Languages
+    color: '#fe7f2d'
+    color_border: '#fe7f2d'
     items:
       - name: C++
         description: ''
         percent: 100
-        # icon: code
-        # icon_pack: fas
       - name: Python
         description: ''
         percent: 90
@@ -67,8 +68,14 @@ skills:
       - name: Shell Script
         description: ''
         percent: 70
+      - name: SQL
+        description: ''
+        percent: 50
+      - name: R
+        description: ''
+        percent: 20
   - name: Techniques
-    color: '#eeac02'
+    color: '#f0bf23'
     color_border: '#f0bf23'
     items:
       - name: Automated Testing
@@ -85,22 +92,22 @@ skills:
         percent: 60
       - name: Data Analysis (NumPy, SciPy, Pandas, Matplotlib, ScikitLearn)
         percent: 60
-  # - name: Tools/Frameworks
-  #   color: '#eeac02'
-  #   color_border: '#f0bf23'
-  #   items:
-  #     - name: Git
-  #       percent: 80
-  #     - name: Express JS
-  #       percent: 80
-  #     - name: Docker
-  #       percent: 80
-  #     - name: Kubernetes
-  #       percent: 80
-  #     - name: AWS
-  #       percent: 80
-  #     - name: Redis
-  #       percent: 80
+  - name: Tools/Frameworks
+    color: '#a1c181'
+    color_border: '#a1c181'
+    items:
+      - name: Git
+        percent: 100
+      - name: Express JS
+        percent: 80
+      - name: Docker
+        percent: 80
+      - name: Kubernetes
+        percent: 80
+      - name: AWS
+        percent: 80
+      - name: Redis
+        percent: 80
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
