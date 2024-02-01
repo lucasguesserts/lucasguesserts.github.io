@@ -18,16 +18,7 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'A highly-customizable Hugo academic resume theme powered by Hugo Blox Builder.'
-    twitter: 'GetResearchDev'
-  analytics:
-    google_analytics: ''
-    baidu_tongji: ''
-    google_tag_manager: ''
-    microsoft_clarity: ''
-  verification:
-    google: ''
-    baidu: ''
+    description: 'Personal website of Lucas Guesser'
 
 # Site header
 
@@ -45,7 +36,7 @@ header:
 
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© {year} Lucas Guesser. This work is licensed under {license}'
     license:
       enable: true
       allow_derivatives: false
@@ -55,8 +46,8 @@ footer:
 # Localization
 
 locale:
-  date_format: 'Jan 2, 2006'
-  time_format: '3:04 PM'
+  date_format: '2026-12-31'
+  time_format: '23:59'
   address_format: en-us
 
 # Site features
@@ -70,9 +61,9 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/<username>/<repository>'
+    url: 'https://github.com/lucasguesserts/lucasguesserts.github.io'
     content_dir: content
-    branch: main
+    branch: trunk
   avatar:
     gravatar: false
     shape: circle
