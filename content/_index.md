@@ -65,6 +65,11 @@ sections:
       #   Leave other parameters empty if not required.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: 'The Structured Query Language SQL'
+          organization: 'University of Colorado Boulder'
+          date_start: '2024-01-15'
+          date_end: '2024-01-29'
+          certificate_url: 'https://coursera.org/verify/TEAMHEUFBHUU'
         - title: 'Algorithms, Part I'
           organization: 'Princeton University'
           date_start: '2023-12-01'
