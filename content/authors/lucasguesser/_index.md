@@ -92,22 +92,6 @@ skills:
         percent: 60
       - name: Data Analysis (NumPy, SciPy, Pandas, Matplotlib, ScikitLearn)
         percent: 60
-  - name: Tools/Frameworks
-    color: '#a1c181'
-    color_border: '#a1c181'
-    items:
-      - name: Git
-        percent: 100
-      - name: Express JS
-        percent: 80
-      - name: Docker
-        percent: 80
-      - name: Kubernetes
-        percent: 80
-      - name: AWS
-        percent: 80
-      - name: Redis
-        percent: 80
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
