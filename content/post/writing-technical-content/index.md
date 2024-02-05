@@ -24,9 +24,9 @@ The knapsack problem is a combinatorial optimization problem where the goal is t
 Let:
 
 1. $I$ be a set of items;
-2. $w_i \in \Z^*_+$ be the weight of item $i \in I$;
-3. $p_i \in \Z^*_+$ be the profit of item $i \in I$;
-4. $c \in \Z^*_+$ be the capacity of the knapsack;
+2. $w_i \in \mathbb{Z}^*_+$ be the weight of item $i \in I$;
+3. $p_i \in \mathbb{Z}^*_+$ be the profit of item $i \in I$;
+4. $c \in \mathbb{Z}^*_+$ be the capacity of the knapsack;
 5. $x_i$ be a binary variable that indicates if item $i \in I$ is in the knapsack;
 
 (Notice that one specified the values of $w_i$, $p_i, c$ to be integers for simplicity, but the problem can be generalized to real numbers.)
@@ -35,8 +35,8 @@ The knapsack problem can be formulated as an integer linear programming problem 
 
 $$
 \begin{align*}
-    \max & \sum_{i \in I} p_i x_i \\
-    \text{subject to} & \sum_{i \in I} w_i x_i \leq c \\
+    \max & \sum_{i \in I} p_i x_i \\\\
+    \text{subject to} & \sum_{i \in I} w_i x_i \leq c \\\\
     & x_i \in \{0, 1\} \quad \forall i \in I
 \end{align*}
 $$
@@ -60,19 +60,37 @@ The instance generator expects 7 parameters:
 6. $s \in \mathbb{Z}^*_+$: perturbation (noise) in the profits/weights of the items;
 7. $seed \in \mathbb{Z}$: seed for the random number generator;
 
-We are going to generate 10 instances with the following parameters:
+We are going to generate instances with the following parameters:
 
 {{< table path="instances.csv" header="true" caption="Table 1: Parameters for generating instances" >}}
 
 ## Models
 
+The focus here is to solve the problem using BRKGA. However, for comparison purposes, two other models are going to be developed:
+
+1. greedy algorithm;
+2. integer linear programming;
+3. BRKGA;
+
 ### Greedy
+
+Associate to each item $i \in I$ a relative profit value $r_i = \dfrac{p_i}{w_i}$. Sort the items in decreasing order of $r_i$. Then, add the items to the knapsack in this order until the capacity is reached.
 
 ### Integer Linear Programming
 
+The integer linear programming model is the same as the one presented in the [Mathematical Formulation section](#mathematical-formulation). It can be implemented with any optimization solver for integer linear programming. I chose to use Gurobi 11.
+
 ### BRKGA
 
-### External Models
+We need to specify two things:
+
+1. the gene:
+   1. it will be a list of real numbers in the interval $[0, 1]$;
+   2. each allele will represent the order in which the items are going to be added to the knapsack (items with high value are going to be added first);
+2. how to decode the genes into a fitness value;
+   1. sort the items in decreasing order of the gene values;
+   2. add the items to the knapsack in this order until the capacity is reached;
+   3. return the total profit of the items in the knapsack as the fitness value;
 
 ## Run the models and display quality of the solutions
 
@@ -102,6 +120,12 @@ Are there other tools that do the same thing?
 1. Linear Programming - Vasek Chvátal;
 2. Introduction to Linear Optimization - Bertsimas and Tsitsiklis;
 3. Integer and Combinatorial Optimization - Laurence A. Wolsey, George L. Nemhauser;
+
+### Gurobi
+
+1. [Gurobi website](https://www.gurobi.com/);
+2. [Gurobi C++ API](https://www.gurobi.com/documentation/11.0/refman/cpp_api_details.html);
+3. [Gurobi Diet example in C++](https://www.gurobi.com/documentation/current/examples/diet_cpp_cpp.html);
 
 ### irace
 
