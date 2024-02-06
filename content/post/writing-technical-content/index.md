@@ -82,7 +82,7 @@ The integer linear programming model is the same as the one presented in the [Ma
 
 ### BRKGA
 
-We need to specify two things:
+We need to specify some things:
 
 1. the gene:
    1. it will be a list of real numbers in the interval $[0, 1]$;
@@ -91,8 +91,15 @@ We need to specify two things:
    1. sort the items in decreasing order of the gene values;
    2. add the items to the knapsack in this order until the capacity is reached;
    3. return the total profit of the items in the knapsack as the fitness value;
+3. the parameters of the algorithm, as required by the , summarized in the Table 2;
+
+{{< table path="brkga_initial_parameters.csv" header="true" caption="Table 2: Initial parameters of the BRKGA" >}}
 
 ## Run the models and display quality of the solutions
+
+The results are in the Table 3 below. Notice that, for the instances 1, 2, and 3, BRGKA found the optimal solution. For instance 4, it performed better than the Greedy Algorithm. However, for the instance 5, its performance was worse than the Greedy Algorithm.
+
+{{< table path="initial_results.csv" header="true" caption="Table 3: results of the solutions of the models" >}}
 
 ## Explain irace
 
@@ -126,6 +133,11 @@ Are there other tools that do the same thing?
 1. [Gurobi website](https://www.gurobi.com/);
 2. [Gurobi C++ API](https://www.gurobi.com/documentation/11.0/refman/cpp_api_details.html);
 3. [Gurobi Diet example in C++](https://www.gurobi.com/documentation/current/examples/diet_cpp_cpp.html);
+
+### BRKGA - brkga_mp_ipr_cpp
+
+1. [brkga_mp_ipr_cpp github](https://github.com/ceandrade/brkga_mp_ipr_cpp/);
+2. [brkga_mp_ipr_cpp documentation](https://ceandrade.github.io/brkga_mp_ipr_cpp/);
 
 ### irace
 

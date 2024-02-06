@@ -1,0 +1,25 @@
+Parameter, Value
+population_size, 100
+elite_percentage, 0.3
+mutants_percentage, 0.2
+num_elite_parents, 2
+total_parents, 3
+bias_type, LOG INVERSE
+num_independent_populations, 3
+pr_number_pairs, 0
+pr_minimum_distance, 0.15
+pr_type, DIRECT
+pr_selection, BEST SOLUTION
+pr_distance_function_type, KENDALLTAU
+alpha_block_size, 1.0
+pr_percentage, 1.0
+num_exchange_individuals, 1
+shaking_type, SWAP
+shaking_intensity_lower_bound, 0.25
+shaking_intensity_upper_bound, 0.75
+maximum_running_time, 1 second
+exchange_interval, 100
+ipr_interval, 200
+shake_interval, 300
+reset_interval, 500
+stall_offset, 1000
