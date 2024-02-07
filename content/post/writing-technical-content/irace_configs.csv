@@ -1,0 +1,6 @@
+Parameter, Lower Bound, Upper Bound
+population size, 10, 1000
+elite percentage, 0.001, 0.5
+mutants percentage, 0.001, 0.5
+num elite parents, 1, 5
+total parents, 2, 5
