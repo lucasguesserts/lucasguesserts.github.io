@@ -1,9 +1,9 @@
 Parameter, Value
-population_size, 204
-elite_percentage, 0.1207
-mutants_percentage, 0.0198
+population_size, 100
+elite_percentage, 0.3
+mutants_percentage, 0.2
 num_elite_parents, 2
-total_parents, 5
+total_parents, 3
 bias_type, LOG INVERSE
 stall_offset, 1000
 maximum_running_time, 1 [second]

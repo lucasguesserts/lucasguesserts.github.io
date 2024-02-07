@@ -64,7 +64,7 @@ The focus here is to solve the problem using BRKGA. However, for comparison purp
 2. sort the items in decreasing order of $r_i$;
 3. add the items to the knapsack in that order until no item fits;
 
-### Integer Linear Programming
+### Integer Linear Programming (ILP)
 
 The integer linear programming model is the same as the one presented in the [Knapsack Problem section](#knapsack-problem). It can be implemented with any optimization solver for integer linear programming. I chose to use Gurobi 11.
 
@@ -115,15 +115,50 @@ For the purpose of this tutorial, the following features of the `brkga_mp_ipr_cp
 
 ## Run the models and display quality of the solutions
 
-The results are in the Table 3 below. Notice that, for the instances 1, 2, and 3, BRGKA found the optimal solution. For instance 4, it performed better than the Greedy Algorithm. However, for the instance 5, its performance was worse than the Greedy Algorithm.
+For comparing the performance of the genetic algorithm with greedy, for each instance the profit of the BRKGA solution is divided by the profit of the Greedy solution, and then one takes the average of all values. The value, if greater than 1, indicates that the BRKGA solution is better than the Greedy solution, and if less than 1, indicates that the Greedy solution is better than the BRKGA solution. The same is done for the Integer Linear Programming Model (ILP).
 
-{{< table path="initial_results.csv" header="true" caption="Table 3: results of the solutions of the models" >}}
+For the ILP, one set a high time limit and a low tolerance for the solution so that the profit reported is the optimal or as close as possible to it. Thus one expects the value to be reported to be lower than 1.
 
-## Explain irace
+The results are below:
 
-Are there other tools that do the same thing?
+| BRKGA / ILP | BRKGA / Greedy |
+|-------------|----------------|
+| 0.9983115   | 1.0043208      |
 
-## Optimize BRKGA with irace
+## Iterated Racing for Automatic Algorithm Configuration (irace)
+
+### The Problem
+
+Genetic Algorithms are nice! Given the [specific definitions](#brkga-specific-definitions), it is simply a matter of running the algorithm. However, it is highly dependent on the parameters, in the sense that for different problems, even for different instances of the same problem, the best set of parameters can be (most likely are) different.
+
+That is the problem proposed here. One can try different sets of parameters and see which one performs better given the instances. But how does one know which set of parameters to try? And how does one know when to stop trying?
+
+In practice, values are chosen by intuition:
+
+1. large populations increase the search space and so the likelyhood of finding good solutions, but it also increases the runtime;
+2. high mutation rates increase diversity, but it loses in intensification;
+
+Intuition can take one just so far. So it is clear that one requires a good procedure so to find parameters "good enough".
+
+That is the Automated Offline Parameter Tuning Problem: to adjust the parameters and heuristics before solving.
+
+### The Solution
+
+According to Hoos, there are three main approaches to solve the problem: Racing, ParamILS, and Sequential Model-Based Optimisation (SMBO). All of them propose different procedures to explore the space of possible configurantions, exploit the information gathered, and decide which configurations are better.
+
+For our purposes, we are going to use a specific implementation: Iterated Racing for Automatic Algorithm Configuration (irace).
+
+irace receives as input:
+
+1. a set of instances;
+2. a configurable algorithm;
+3. a set of parameters and their possible values;
+
+It then tune the parameters by finding the most appropriate settings.
+
+In practice, it means that we are going to give it the required data and it will return to us the best set of parameters for the BRKGA.
+
+### Optimizing BRKGA with irace
 
 ## Conclusion
 
@@ -163,6 +198,8 @@ Are there other tools that do the same thing?
 1. [irace website](https://mlopez-ibanez.github.io/irace/);
 2. [irace github](https://github.com/MLopez-Ibanez/irace);
 3. [irace R package page](https://www.rdocumentation.org/packages/irace/versions/3.5);
+4. [2012 - Autonomous Search - Youssef Hamadi, Eric Monfroy, Frédéric Saubion](https://dx.doi.org/10.1007/978-3-642-21434-9);
+   1. [Chapter 3 - Automated Algorithm Configuration and Parameter Tuning - Holger H. Hoos](https://dx.doi.org/10.1007/978-3-642-21434-9_3);
 
 ## Appendix
 
