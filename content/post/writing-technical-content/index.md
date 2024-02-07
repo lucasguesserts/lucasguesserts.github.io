@@ -11,6 +11,8 @@ tags:
   - linear programming
 ---
 
+The code used in this tutorial is available in [this github repository](https://github.com/lucasguesserts/knapsack). At the time of writing this post, the latest commit was `6230c650c96a994db255962b703b3d1c3d98866b`;
+
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
@@ -207,36 +209,41 @@ The comparison of configurations and irace's application underscores its effecti
 
 ## References and Links
 
-1. Knapsack
+1. Code of this tutorial:
+
+   1. [Github repository](https://github.com/lucasguesserts/knapsack);
+      1. at the time of writing this post, the latest commit was `6230c650c96a994db255962b703b3d1c3d98866b`;
+
+2. Knapsack
 
    1. [1990 - Knapsack problems: algorithms and computer implementations - Silvano Martello, Paolo Toth](https://dl.acm.org/doi/book/10.5555/98124);
    2. [2004 - Knapsack Problems - Hans Kellerer , Ulrich Pferschy , David Pisinger](https://link.springer.com/book/10.1007/978-3-540-24777-7);
 
-2. Instances Generation
+3. Instances Generation
 
    1. [2022 - A new class of hard problem instances for the 0–1 knapsack problem - Jorik Jooken, Pieter Leyman, Patrick De Causmaecker](https://doi.org/10.1016/j.ejor.2021.12.009);
    2. [My fork of the Instance Generator](https://github.com/lucasguesserts/knapsackProblemInstances);
    3. [Instance Generator](https://github.com/JorikJooken/knapsackProblemInstances);
 
-3. Linear Programming
+4. Linear Programming
 
    1. Linear Programming - Vasek Chvátal;
    2. Introduction to Linear Optimization - Bertsimas and Tsitsiklis;
    3. Integer and Combinatorial Optimization - Laurence A. Wolsey, George L. Nemhauser;
 
-4. Gurobi
+5. Gurobi
 
    1. [Gurobi website](https://www.gurobi.com/);
    2. [Gurobi C++ API](https://www.gurobi.com/documentation/11.0/refman/cpp_api_details.html);
    3. [Gurobi Diet example in C++](https://www.gurobi.com/documentation/current/examples/diet_cpp_cpp.html);
 
-5. BRKGA - brkga_mp_ipr_cpp
+6. BRKGA - brkga_mp_ipr_cpp
 
    1. Chapter 5 Genetic Algorithms - Colin R. Reeves (I don't know the book);
    2. [brkga_mp_ipr_cpp github](https://github.com/ceandrade/brkga_mp_ipr_cpp/);
    3. [brkga_mp_ipr_cpp documentation](https://ceandrade.github.io/brkga_mp_ipr_cpp/);
 
-6. irace
+7. irace
 
    1. [irace website](https://mlopez-ibanez.github.io/irace/);
    2. [irace repository](https://github.com/MLopez-Ibanez/irace);
