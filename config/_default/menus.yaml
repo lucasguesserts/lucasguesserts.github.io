@@ -16,6 +16,9 @@ main:
   - name: Courses
     url: '#section-accomplishments'
     weight: 40
+  - name: Posts
+    url: '#posts'
+    weight: 50
   - name: Contact
     url: '#contact'
     weight: 60
