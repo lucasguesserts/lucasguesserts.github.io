@@ -62,7 +62,9 @@ The focus here is to solve the problem using BRKGA. However, for comparison purp
 
 ### Greedy
 
-Associate to each item $i \in I$ a relative profit value $r_i = \dfrac{p_i}{w_i}$. Sort the items in decreasing order of $r_i$. Then, add the items to the knapsack in this order until the capacity is reached.
+1. associate to each item $i \in I$ a relative profit value $r_i = \dfrac{p_i}{w_i}$;
+2. sort the items in decreasing order of $r_i$;
+3. add the items to the knapsack in that order until no item fits;
 
 ### Integer Linear Programming
 
@@ -79,7 +81,13 @@ We need to specify some things:
    1. sort the items in decreasing order of the gene values;
    2. add the items to the knapsack in this order until the capacity is reached;
    3. return the total profit of the items in the knapsack as the fitness value;
-3. the parameters of the algorithm, as required by the , summarized in the Table 2;
+3. the parameters of the algorithm, as required by the brkga_mp_ipr_cpp;
+   1. they are summarized in the Table 2 below;
+   2. some of the features of brkga_mp_ipr_cpp are disabled (for simplicity) and so the related parameters are not specified in the table, they are:
+      1. implicit path relinking;
+      2. multiple populations;
+      3. shaken population;
+      4. reset population;
 
 {{< table path="brkga_initial_parameters.csv" header="true" caption="Table 2: Initial parameters of the BRKGA" >}}
 
@@ -104,7 +112,7 @@ Are there other tools that do the same thing?
 1. [1990 - Knapsack problems: algorithms and computer implementations - Silvano Martello, Paolo Toth](https://dl.acm.org/doi/book/10.5555/98124);
 2. [2004 - Knapsack Problems - Hans Kellerer , Ulrich Pferschy , David Pisinger](https://link.springer.com/book/10.1007/978-3-540-24777-7);
 
-### Instances
+### Instances Generation
 
 1. [2022 - A new class of hard problem instances for the 0–1 knapsack problem - Jorik Jooken, Pieter Leyman, Patrick De Causmaecker](https://doi.org/10.1016/j.ejor.2021.12.009);
 2. [My fork of the Instance Generator](https://github.com/lucasguesserts/knapsackProblemInstances);
