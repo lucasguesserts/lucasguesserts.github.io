@@ -19,24 +19,22 @@ For more information about any topic discussed here, please refer to the [Refere
 
 The knapsack problem is a combinatorial optimization problem where the goal is to maximize the value in a knapsack with limited capacity by placing valuable items into it.
 
-### Mathematical Formulation
-
 Let:
 
 1. $I$ be a set of items;
 2. $w_i \in \mathbb{Z}^*_+$ be the weight of item $i \in I$;
 3. $p_i \in \mathbb{Z}^*_+$ be the profit of item $i \in I$;
-4. $c \in \mathbb{Z}^*_+$ be the capacity of the knapsack;
+4. $C \in \mathbb{Z}^*_+$ be the capacity of the knapsack;
 5. $x_i$ be a binary variable that indicates if item $i \in I$ is in the knapsack;
 
-(Notice that one specified the values of $w_i$, $p_i, c$ to be integers for simplicity, but the problem can be generalized to real numbers.)
+(Notice that one specified the values of $w_i$, $p_i, C$ to be integers for simplicity, but the problem can be generalized to real numbers.)
 
 The knapsack problem can be formulated as an integer linear programming problem as follows:
 
 $$
 \begin{align*}
     \max & \sum_{i \in I} p_i x_i \\\\
-    \text{subject to} & \sum_{i \in I} w_i x_i \leq c \\\\
+    \text{subject to} & \sum_{i \in I} w_i x_i \leq C \\\\
     & x_i \in \{0, 1\} \quad \forall i \in I
 \end{align*}
 $$
@@ -44,7 +42,7 @@ $$
 To avoid trivial cases, all instances to be tested will satisfy:
 
 1. the total weight of all items exceeds the capacity of the knapsack: $c < \displaystyle\sum\limits_{i \in I} w_i$;
-2. all items fits, alone, into the knapsack: $\forall i \in I \left(w_i \leq c\right)$.
+2. all items fits, alone, into the knapsack: $\forall i \in I \left(w_i \leq C\right)$.
 
 ## Instances
 
@@ -68,28 +66,52 @@ The focus here is to solve the problem using BRKGA. However, for comparison purp
 
 ### Integer Linear Programming
 
-The integer linear programming model is the same as the one presented in the [Mathematical Formulation section](#mathematical-formulation). It can be implemented with any optimization solver for integer linear programming. I chose to use Gurobi 11.
+The integer linear programming model is the same as the one presented in the [Knapsack Problem section](#knapsack-problem). It can be implemented with any optimization solver for integer linear programming. I chose to use Gurobi 11.
 
 ### BRKGA
 
-We need to specify some things:
+#### Genetic Algorithm Specific Definitions
 
-1. the gene:
-   1. it will be a list of real numbers in the interval $[0, 1]$;
-   2. each allele will represent the order in which the items are going to be added to the knapsack (items with high value are going to be added first);
-2. how to decode the genes into a fitness value;
+Let $I$ be a set of items and $n$ be the number of items, $n = \left| I \right|$. Define, for the genetic algorithm:
+
+1. **Phenotype Search Space**: the set of possible solutions. Here it is defined as a subset of $I$ such that all items fit in the knapsack:
+   $$ \mathcal{P} = \left\lbrace x \subseteq I \ \Big| \ \displaystyle\sum\limits_{i \in x} w_i \leq C \right\rbrace $$
+2. **Phenotype or Individual**: an element $x$ of the Phenotype Search Space $x \in \mathcal{P}$;
+3. **Allele**: the values that will be used to create the encoding of the Phenotypes. Here it is defined as a value $a$ between $0$ and $1$:
+   $$ \mathcal{A} = \left\lbrace a \in \mathbb{R} \ | \ 0 \leq a \leq 1 \right\rbrace $$
+   (This is actually the encoding required by the BRKGA);
+4. **Genotype Search Space**: the set of possible encodings. Here it is defined as a list of $n$ alleles:
+    $$ \mathcal{G} = \mathcal{A}^n $$
+    Notice that $|\mathcal{G}|$ is infinite, whereas $|\mathcal{P}|$ is finite;
+5. **Genotype or Chromosome**: an element $y$ of the Genotype Search Space $y \in \mathcal{G}$:
+   1. $y$ is a concatenation of $n$ alleles: $y = y_1\dots y_n$;
+   2. each of the $n$ elements $y_i$ is known as a **Gene**;
+6. **Genotype-Phenotype Mapping**: a function $m$ that maps a chromosome to an individual:
+   $$ m: \mathcal{G} \rightarrow \mathcal{P} $$
+   Here $m$ is defined to work as follows:
    1. sort the items in decreasing order of the gene values;
-   2. add the items to the knapsack in this order until the capacity is reached;
-   3. return the total profit of the items in the knapsack as the fitness value;
-3. the parameters of the algorithm, as required by the brkga_mp_ipr_cpp;
-   1. they are summarized in the Table 2 below;
-   2. some of the features of brkga_mp_ipr_cpp are disabled (for simplicity) and so the related parameters are not specified in the table, they are:
-      1. implicit path relinking;
-      2. multiple populations;
-      3. shaken population;
-      4. reset population;
+   2. add the items to the knapsack in that order until no item fits;
 
-{{< table path="brkga_initial_parameters.csv" header="true" caption="Table 2: Initial parameters of the BRKGA" >}}
+   (Notice that $m$ is not a bijection, as there are many genotypes that map to the same phenotype);
+7. **objective function**: a function $f$ that maps a phenotype to a real number. Here it is defined as total profit of the items in the knapsack:
+   $$ f: \mathcal{P} \rightarrow \mathbb{R} $$
+   $$ f(x) = \displaystyle\sum\limits_{i \in x} p_i $$
+8. **fitness function**: a function $g$ that maps a genotype to a real number. It is defined as the composition $g = f \circ m$:
+   $$ g: \mathcal{G} \rightarrow \mathbb{R} $$
+   $$ g(y) = f(m(y))$$
+
+#### BRKGA Specific Definitions
+
+The Biased Random-Key Genetic Algorithm (BRKGA), more specifically the `brkga_mp_ipr_cpp` library used here, requires some parameters to be defined. The parameters as well as their correspondet values are summarized in the Table 1 below.
+
+{{< table path="brkga_initial_parameters.csv" header="true" caption="Table 1: Initial parameters of the BRKGA" >}}
+
+For the purpose of this tutorial, the following features of the `brkga_mp_ipr_cpp` are disabled (and so the related parameters are not specified in the Table):
+
+1. implicit path relinking;
+2. multiple populations;
+3. shaken population;
+4. reset population;
 
 ## Run the models and display quality of the solutions
 
@@ -132,8 +154,9 @@ Are there other tools that do the same thing?
 
 ### BRKGA - brkga_mp_ipr_cpp
 
-1. [brkga_mp_ipr_cpp github](https://github.com/ceandrade/brkga_mp_ipr_cpp/);
-2. [brkga_mp_ipr_cpp documentation](https://ceandrade.github.io/brkga_mp_ipr_cpp/);
+1. Chapter 5 Genetic Algorithms - Colin R. Reeves (I don't know the book);
+2. [brkga_mp_ipr_cpp github](https://github.com/ceandrade/brkga_mp_ipr_cpp/);
+3. [brkga_mp_ipr_cpp documentation](https://ceandrade.github.io/brkga_mp_ipr_cpp/);
 
 ### irace
 
