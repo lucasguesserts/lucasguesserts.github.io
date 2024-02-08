@@ -160,7 +160,19 @@ sections:
       title: Contact
       # Contact (add or remove contact options as necessary)
       email: lucasguesser@protonmail.com
-      phone: +55 48 98439-6818
+      contact_links:
+      - name: LinkedIn
+        icon: linkedin
+        icon_pack: fab
+        link: https://www.linkedin.com/in/lucasguesserts/
+      - name: GitHub
+        icon: github
+        icon_pack: fab
+        link: https://github.com/lucasguesserts
+      - name: Resume
+        icon: cv
+        icon_pack: ai
+        link: uploads/resume.pdf
       # Automatically link email and phone or display as text?
       autolink: true
       # # Email form provider
