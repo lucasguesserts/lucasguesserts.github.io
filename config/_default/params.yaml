@@ -46,8 +46,8 @@ footer:
 # Localization
 
 locale:
-  date_format: '2026-12-31'
-  time_format: '23:59'
+  date_format: '2006-01-02'
+  time_format: '15:04'
   address_format: en-us
 
 # Site features
