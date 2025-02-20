@@ -4,21 +4,21 @@ This is the project management, where all issues, ideas, and discussions happen.
 
 ## Metadata
 
-1. project identifier: `PWP` (personal web page);
+1. project identifier: `PWS` (personal website);
 
 ## Project structure
 
 1. the top level `project/README.md` describes the project;
-2. the project has an identifier with three letters, e.g., `PWP`;
+2. the project has an identifier with three letters, e.g., `PWS`;
 3. the hierarchy is:
    1. project
    2. epic
    3. issue (or story)
 4. attachments are always associated with an issue
-   1. `project/attachment/PWP-1/PWP-2/file.txt`
+   1. `project/attachment/PWS-1/PWS-2/file.txt`
 5. all markdown files have metadata (except the top level project description)
    1. `title`: any text
-   2. `id`: must be in the format `PWP-XYZ`, where `PWP` is the project identifier and `XYZ` is a unique number for the project
+   2. `id`: must be in the format `PWS-XYZ`, where `PWS` is the project identifier and `XYZ` is a unique number for the project
    3. `type`: one of `epic, issue, story`
    4. `status`:
       1. `epic`:
@@ -56,12 +56,12 @@ This is the project management, where all issues, ideas, and discussions happen.
 project/
     README.md: project description
     epic/
-        PWP-1/
+        PWS-1/
             README.md: epic description
-            PWP-2.md: issue
+            PWS-2.md: issue
     attachments/
-        PWP-1/
-            PWP-2/
+        PWS-1/
+            PWS-2/
 ```
 
 ### Markdown metadata example
@@ -69,7 +69,7 @@ project/
 ```yaml
 ---
 title: my aamazing epic
-id: PWP-1
+id: PWS-1
 type: epic
 status: not started
 start-date: 2025-01-01
