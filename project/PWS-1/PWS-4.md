@@ -31,3 +31,11 @@ The issue is solved when there is a list of nice personal websites and, for each
 Search for references online, visit personal websites you already know.
 
 ## 5. Implementation
+
+1. [Mateus Felipe Colla](https://mateusfcolla.github.io/);
+2. [Coding Horror](https://blog.codinghorror.com/);
+3. [Ava's blog](https://blog.avas.space/);
+4. [Dhole](https://soatok.blog/b/);
+5. [Rishi](https://riziovo.com/index.html);
+6. [Jean de Dieu](https://jeandedieu.vercel.app/);
+7. [Touhidul Islam Chayan](https://www.chnspart.com/);
