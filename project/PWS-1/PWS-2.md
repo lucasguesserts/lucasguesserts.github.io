@@ -29,6 +29,6 @@ I am assuming that a pure HTML page is enough to get started. I will verify duri
 
 Create a simple HTML page ✅
 
-## 7. Done
+## 7. Solved
 
 There is a simple `index.html`, and that is enough for now.

@@ -2,7 +2,7 @@
 title: I do not have the simple page published
 id: PWS-3
 type: issue
-status: 5. implementation
+status: 7. Solved
 start-date: 2025-02-20
 end-date: 2025-02-20
 ---
@@ -11,7 +11,7 @@ end-date: 2025-02-20
 
 ### 1.1. Current State
 
-I have a simple page to publish: [`index.html`](../../index.html).
+I have a simple page to publish: [`index.html`](../../docs/index.html).
 
 ### 1.3. Target State
 
@@ -28,3 +28,7 @@ Use GihHub pages for this. Yes, I am constraining it to that specific host for a
 ## 5. Implementation
 
 Follow the instructions in [this page](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+
+## 7. Solved
+
+It is live. However, when I push to `trunk`, I will have to change the configurations on GitHub pages (I configured it to deploy from the feature branch).
