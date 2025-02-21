@@ -2,7 +2,7 @@
 title: Page does not render correctly on mobile
 id: PWS-7
 type: issue
-status: 0. not started
+status: 7. solved
 start-date: 2025-02-21
 end-date: 2025-02-21
 ---
@@ -33,3 +33,7 @@ npx vite dev --host $HOSTNAME --port 5173 docs/
 # CTRL + C to close vite
 sudo firewall-cmd --reload # reset firewall, to close the opened door
 ```
+
+## 7. Solved
+
+Now it renders correctly.
