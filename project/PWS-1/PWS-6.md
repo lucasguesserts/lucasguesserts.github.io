@@ -2,9 +2,9 @@
 title: My personal website is way too simple
 id: PWS-6
 type: issue
-status: 5. implementation
-start-date: 2025-01-01
-end-date: 2025-12-31
+status: 7. solved
+start-date: 2025-02-21
+end-date: 2025-02-21
 ---
 
 ## 1. Description
@@ -40,6 +40,6 @@ I am assuming that I can make the website looks okay by simply editing the page 
 
 Basically, a black and white webpage with minimal information.
 
-## 7. Done
+## 7. Solved
 
 It is good enough for now...

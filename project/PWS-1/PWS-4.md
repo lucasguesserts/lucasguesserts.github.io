@@ -4,7 +4,7 @@ id: PWS-4
 type: issue
 status: 7. solved
 start-date: 2025-02-20
-end-date: 2025-02-20
+end-date: 2025-02-21
 ---
 
 ## 1. Description
@@ -39,3 +39,7 @@ Search for references online, visit personal websites you already know.
 5. [Rishi](https://riziovo.com/index.html);
 6. [Jean de Dieu](https://jeandedieu.vercel.app/);
 7. [Touhidul Islam Chayan](https://www.chnspart.com/);
+
+## 7. Solved
+
+The [PWS-5 story](./PWS-5.md) has enough information.

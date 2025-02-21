@@ -2,7 +2,7 @@
 title: I do not have the simple page published
 id: PWS-3
 type: issue
-status: 7. Solved
+status: 7. solved
 start-date: 2025-02-20
 end-date: 2025-02-20
 ---

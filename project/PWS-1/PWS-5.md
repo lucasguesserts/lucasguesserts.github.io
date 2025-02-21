@@ -4,7 +4,7 @@ id: PWS-5
 type: story
 status: complete
 start-date: 2025-02-20
-end-date: 2025-02-20
+end-date: 2025-02-21
 ---
 
 This story contains references of nice personal websites, with an analysis of their focus.

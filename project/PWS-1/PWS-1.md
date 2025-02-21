@@ -2,7 +2,7 @@
 title: Initial Website Version
 id: PWS-1
 type: epic
-status: in progress
+status: solved
 start-date: 2025-02-20
 end-date: 2025-02-20
 ---
@@ -38,3 +38,7 @@ For now, that is enough to motivate me.
 ## Time Limited
 
 This ought to be simple, so it is going to last only one day.
+
+## Solved
+
+It took a bit more than one day.
