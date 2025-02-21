@@ -24,7 +24,7 @@ When the website is up with some basic content.
 
 ## Achievable
 
-I have done this before using github pages, though I did not like it.
+I have done this before using [Hugo](https://gohugo.io/), though I did not like it.
 
 ## Relevant
 
