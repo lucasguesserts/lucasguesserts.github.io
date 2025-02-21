@@ -37,3 +37,9 @@ Modify the initial version. For now, use only HTML and CSS, limited to what I kn
 I am assuming that I can make the website looks okay by simply editing the page source code with my current knownledge. Maybe I will need something else, but for now it seems okay.
 
 ## 5. Implementation
+
+Basically, a black and white webpage with minimal information.
+
+## 7. Done
+
+It is good enough for now...
