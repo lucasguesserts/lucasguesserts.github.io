@@ -4,7 +4,6 @@ ignore_merge_commits = true
 padd = { changelog_title = "Project Add", omit_from_changelog = true }
 pupdate = { changelog_title = "Project Update", omit_from_changelog = true }
 premove = { changelog_title = "Project Remove", omit_from_changelog = true }
-chore = { changelog_title = "Chore", omit_from_changelog = true }
 ci = {} # disabled
 revert = {} # disabled
 docs = {} # disabled
