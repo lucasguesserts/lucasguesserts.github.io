@@ -11,7 +11,7 @@ This story contains references of nice personal websites, with an analysis of th
 
 ## [Mateus Felipe Colla](https://mateusfcolla.github.io/)
 
-It is a single-page website with all the information required.
+It is a single-page website with a personal portifolio.
 
 I like:
 
@@ -43,6 +43,8 @@ I don't like:
 
 ## [Ava's blog](https://blog.avas.space/)
 
+A blog.
+
 I like:
 
 I don't like:
@@ -51,6 +53,8 @@ I don't like:
 2. way too white, it is difficult to read things;
 
 ## [Dhole](https://soatok.blog/b/)
+
+A blog.
 
 I like:
 
@@ -65,6 +69,8 @@ I don't like:
 
 ## [Rishi](https://riziovo.com/index.html)
 
+Portifolio page.
+
 I like:
 
 1. skills divided into groups;
@@ -75,6 +81,8 @@ I don't like:
 1. the "projects" page is a mess, I can understand nothing;
 
 ## [Jean de Dieu](https://jeandedieu.vercel.app/)
+
+Portifolio page.
 
 I love this one. Though the guy does not have much experience, it is the kind of thing I am looking for. It is simple, minimalistic, clear.
 
@@ -89,10 +97,8 @@ I don't like:
 
 ## [Touhidul Islam Chayan](https://www.chnspart.com/)
 
-This looks like you are reading an interactive CV.
+Portifolio. This looks like you are reading an interactive CV.
 
 I like:
 
 1. it is very intuitive to navigate through it;
-
-I don't like:
