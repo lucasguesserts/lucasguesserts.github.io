@@ -2,7 +2,7 @@
 title: I do not know nice personal websites
 id: PWS-4
 type: issue
-status: 0. not started
+status: 7. solved
 start-date: 2025-02-20
 end-date: 2025-02-20
 ---

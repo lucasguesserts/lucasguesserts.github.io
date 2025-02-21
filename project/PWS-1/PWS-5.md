@@ -2,7 +2,7 @@
 title: Reference of nice personal websites
 id: PWS-5
 type: story
-status: incomplete
+status: complete
 start-date: 2025-02-20
 end-date: 2025-02-20
 ---
