@@ -59,8 +59,10 @@
             cursor: inherit;
             text-decoration: none;
         }
+        nav {
+            text-align: center;
+        }
         footer {
-            margin-top: 3em;
             font-size: 0.8em;
             text-align: center;
         }
@@ -71,7 +73,7 @@
 
 <main>
 
-<section>
+<section id="about-me">
 <h1>Lucas Guesser</h1>
 <p class="personal-title"><abbr title="Master of Science">M.Sc.</abbr> in Computer Science</p>
 <p class="personal-title"><abbr title="Bachelor of Science">B.Sc.</abbr> in Mechanical Engineering</p>
@@ -85,7 +87,7 @@
 <p>I do whatever it takes to figure out the best-fit solution in any given scenario. I am a critical thinker, highly communicative, and proactive, with a focus on value delivery.</p>
 </section>
 
-<section>
+<section id="contact">
 <h2>Contact</h2>
 <ol>
     <li><a target="_blank" href="https://www.linkedin.com/in/lucasguesserts/">LinkedIn</a></li>
@@ -96,7 +98,13 @@
 
 </main>
 
-<footer>
+<hr>
+
+<nav style="margin-top: 1em;">
+    <a href="#about-me">About me</a> | <a href="#contact">Contact</a>
+</nav>
+
+<footer style="margin-top: 1em;">
     &copy; 2025 Lucas Guesser. All Rights Reserved
 </footer>
 
