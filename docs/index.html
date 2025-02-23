@@ -2,15 +2,13 @@
 <html lang="en-US">
 
 <head>
-    <meta charset="UTF-8">
-    <meta content="text/html">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <meta name="robots" content="index, follow">
 
-    <meta name="description" content="Lucas Guesser personal website">
-    <meta name="keywords" content="Lucas Guesser,portifolio,personal,site,contact">
+    <meta name="description" content="Lucas Guesser - Engineer and problem solver with expertise in Computer Science and Mechanical Engineering. Passionate about delivering value through critical thinking and technology.">
+    <meta name="keywords" content="Lucas Guesser,portfolio,personal,site,contact">
     <meta name="author" content="Lucas Guesser">
-    <link rel="icon" href="image/lg.ico"> <!-- create your icon using https://www.favicon.cc/ -->
+    <link rel="icon" type="image/x-icon" href="images/lg.ico">
     <title>Lucas Guesser</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,32 +38,83 @@
         a:visited {
             color: #cda8f0;
         }
-        .center {
-            display: block;
+        figure {
+            text-align: center;
             margin-left: auto;
             margin-right: auto;
+        }
+        img.profile-picture {
             width: 50%;
+        }
+        p.personal-title {
+            /* same as h2 */
+            font-size: 1.5em;
+            margin-top: 0.83em;
+            margin-bottom: 0.83em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+            text-align: center;
+        }
+        p.emphasis {
+            text-align: center;
+            font-weight: bold;
+        }
+        abbr[title] {
+            border-bottom: none;
+            cursor: inherit;
+            text-decoration: none;
+        }
+        nav {
+            text-align: center;
+            margin-top: 1em;
+        }
+        footer {
+            font-size: 0.8em;
+            text-align: center;
+            margin-top: 1em;
+            border-top: 1px solid #ffffff;
+            padding-top: 1em;
         }
     </style>
 </head>
 
 <body>
 
-<h1>Lucas Guesser</h1>
-<h2 style="text-align: center;">M.Sc. in Computer Science</h2>
-<h2 style="text-align: center;">B.Sc. in Mechanical Engineering</h2>
+<header id="top">
+    <h1>Lucas Guesser</h1>
+    <p class="personal-title"><abbr title="Master of Science">M.Sc.</abbr> in Computer Science</p>
+    <p class="personal-title"><abbr title="Bachelor of Science">B.Sc.</abbr> in Mechanical Engineering</p>
+    <nav>
+        <a href="#about-me">About me</a> | <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-<img src="image/profile-picture.png" alt="A photo of me" class="center" style="width:50%;max-height: 100%">
+<main>
+    <section id="about-me">
+        <h2>About Me</h2>
 
-<p style="text-align: center"><b>I am an Engineer</b></p>
-<p>I do whatever it takes to figure out the best-fit solution in any given scenario. I am a critical thinker, highly communicative, and proactive, with a focus on value delivery.</p>
+        <figure>
+            <img class="profile-picture" src="images/profile-picture.jpg" alt="Profile picture of Lucas Guesser">
+        </figure>
 
-<h2>Contact</h2>
-<ol>
-    <li><a href="https://www.linkedin.com/in/lucasguesserts/">LinkedIn</a></li>
-    <li><a href="https://www.github.com/lucasguesserts/">GitHub</a></li>
-    <li><a href="mailto:lucasguesser.persona.outgoing609@passinbox.com">lucasguesser.persona.outgoing609@passinbox.com</a></li>
-</ol>
+        <p class="emphasis">I am an Engineer</p>
+        <p>I do whatever it takes to figure out the best-fit solution in any given scenario. I am a critical thinker, highly communicative, and proactive, with a focus on value delivery.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <ul>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/lucasguesserts/">LinkedIn</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://www.github.com/lucasguesserts/">GitHub</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="mailto:lucasguesser.persona.outgoing609@passinbox.com">lucasguesser.persona.outgoing609@passinbox.com</a></li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 Lucas Guesser. All Rights Reserved.
+</footer>
 
 </body>
 </html>
