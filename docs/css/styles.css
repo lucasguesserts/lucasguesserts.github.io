@@ -39,9 +39,11 @@ p.personal-title {
     font-weight: bold;
     text-align: center;
 }
-p.emphasis {
+em {
+    display: block;
     text-align: center;
     font-weight: bold;
+    font-style: normal;
 }
 abbr[title] {
     border-bottom: none;
