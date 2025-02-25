@@ -1,7 +1,9 @@
+html {
+    background-color: #000
+}
 body {
     font-family: Arial, sans-serif;
     font-size: 1.3em;
-    background-color: #000000;
     color: #FFFFFF;
     max-width: 768px;
     width: auto;
