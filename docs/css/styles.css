@@ -1,7 +1,17 @@
+/*
+Color pallete:
+
+- black: #000000;
+- davys-gray: #5E5E5E;
+- silver: #C0C0C0;
+- antiflash-white: #EBEBEB;
+- white: #FFFFFF;
+*/
+
 html {
-    color: #FFF;
-    font-size: 16px;
-    background-color: #000;
+    color: #FFFFFF;
+    font-size: 20px;
+    background-color: #000000;
     background-image: url("../images/background.webp");
     background-position: center;
     background-repeat: no-repeat;
@@ -24,11 +34,11 @@ h3 {
     text-align: center;
 }
 a {
-    color: #A8A8FF;
+    color: #C0C0C0;
     text-decoration: underline;
 }
 a:visited {
-    color: #CDA8F0;
+    color: #C0C0C0;
 }
 abbr {
     text-decoration: none;
@@ -62,23 +72,23 @@ nav {
     a {
         box-sizing: border-box;
         display: inline-block;
-        color: #FFF;
+        color: #FFFFFF;
         text-decoration: none;
-        background-color: #444;
+        background-color: #5E5E5E;
         padding: 1em;
         text-align: center;
         border-radius: 10px;
         width: 100%;
     }
     a:visited {
-        color: #FFF;
+        color: #FFFFFF;
         text-decoration: none;
     }
 }
 
 body {
     font-size: 1rem;
-    background-color: #000;
+    background-color: #000000;
     font-family: Arial, sans-serif;
     max-width: 768px;
     width: 100%;
