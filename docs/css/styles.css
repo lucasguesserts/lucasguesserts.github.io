@@ -10,7 +10,6 @@ html {
 
 /* elements default */
 
-
 h1 {
     font-size: 2.5em;
     text-align: center;
@@ -57,7 +56,7 @@ nav {
         padding: 0px;
     }
     li {
-        width: min(100%, 300px);
+        width: min(100%, 250px);
         margin: 0.5em;
     }
     a {
