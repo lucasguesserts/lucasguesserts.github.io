@@ -1,4 +1,5 @@
 html {
+    color: #FFF;
     font-size: 16px;
     background-color: #000;
     background-image: url("../images/background.webp");
@@ -7,50 +8,8 @@ html {
     background-size:cover;
 }
 
-/* modules */
+/* elements default */
 
-header {
-    font-size: 1rem;
-}
-
-nav {
-    font-size: 1rem;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        margin: 1rem auto;
-        padding: 0;
-        list-style-type: none;
-    }
-}
-
-body {
-    font-size: 1rem;
-    background-color: #000;
-    font-family: Arial, sans-serif;
-    color: #FFFFFF;
-    max-width: 768px;
-    width: 100%;
-    margin: 0 auto;
-    padding: min(5%, 30px) min(5%, 30px);
-    box-sizing: border-box;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-footer {
-    font-size: 0.8rem;
-    text-align: center;
-    margin-top: 1em;
-    border-top: 1px solid #FFFFFF;
-    padding-top: 1em;
-    margin-bottom: 1em;
-}
-
-/* elements */
 
 h1 {
     font-size: 2.5em;
@@ -72,6 +31,70 @@ a {
 a:visited {
     color: #CDA8F0;
 }
+abbr {
+    text-decoration: none;
+}
+abbr:hover {
+    text-decoration: underline dotted;
+}
+
+/* modules */
+
+header {
+    font-size: 1rem;
+}
+
+nav {
+    font-size: 1rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    a {
+        color: #FFF;
+        text-decoration: none;
+    }
+    a:visited {
+        color: #FFF;
+        text-decoration: none;
+    }
+    ul {
+        margin: 1rem auto;
+        padding: 0;
+        list-style-type: none;
+    }
+    li {
+        display: block;
+        background-color: #444;
+        margin: 1em;
+        padding: 1em;
+        text-align: center;
+        border-radius: 10px;
+    }
+}
+
+body {
+    font-size: 1rem;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+    padding: min(5%, 30px) min(5%, 30px);
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+footer {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1em;
+    border-top: 1px solid #FFFFFF;
+    padding-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* elements */
+
 figure {
     text-align: center;
     max-width: 250px;
@@ -87,9 +110,16 @@ figure {
     font-weight: bold;
     font-style: normal;
 }
-abbr {
-    text-decoration: none;
-}
-abbr:hover {
-    text-decoration: underline dotted;
+
+@media screen and (min-width:500px) {
+    nav {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        li {
+            width: 20%;
+        }
+    }
 }
