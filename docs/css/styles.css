@@ -1,0 +1,117 @@
+html {
+    color: #FFF;
+    font-size: 16px;
+    background-color: #000;
+    background-image: url("../images/background.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+/* elements default */
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+h3 {
+    font-size: 2em;
+}
+.personal-title {
+    font-size: 1.5em;
+    margin-top: 0.83em 0;
+    font-weight: bold;
+    text-align: center;
+}
+a {
+    color: #A8A8FF;
+    text-decoration: underline;
+}
+a:visited {
+    color: #CDA8F0;
+}
+abbr {
+    text-decoration: none;
+}
+abbr:hover {
+    text-decoration: underline dotted;
+}
+
+/* modules */
+
+header {
+    font-size: 1rem;
+}
+
+nav {
+    font-size: 1rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        list-style-type: none;
+        align-items: center;
+        padding: 0px;
+    }
+    li {
+        width: min(100%, 250px);
+        margin: 0.5em;
+    }
+    a {
+        box-sizing: border-box;
+        display: inline-block;
+        color: #FFF;
+        text-decoration: none;
+        background-color: #444;
+        padding: 1em;
+        text-align: center;
+        border-radius: 10px;
+        width: 100%;
+    }
+    a:visited {
+        color: #FFF;
+        text-decoration: none;
+    }
+}
+
+body {
+    font-size: 1rem;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+    padding: min(5%, 30px) min(5%, 30px);
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+footer {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1em;
+    border-top: 1px solid #FFFFFF;
+    padding-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* elements */
+
+figure {
+    text-align: center;
+    max-width: 250px;
+    width: 100%;
+    margin: 1em auto;
+}
+#profile-picture {
+    width: 100%;
+}
+#very-short-description {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-style: normal;
+}
