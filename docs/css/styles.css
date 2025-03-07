@@ -129,6 +129,9 @@ nav.secondary-nav {
 
 nav.projects-nav {
     border-bottom: none;
+    ul {
+        flex-direction: column;
+    }
 }
 
 body {
