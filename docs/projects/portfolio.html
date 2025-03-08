@@ -140,6 +140,13 @@
         </ol>
         <p>I realized that what I wanted was a clean page, with the text in a readable and comfortable width. I did not want anything fancy: no animation, nothing hidden, no drop-down menu. Just a page for people to read with a navigation menu on top.</p>
 
+        <h3>Internal and Extenal Links</h3>
+        <ol>
+            <li>Internal Link: a link to a page on this website;</li>
+            <li>External Link: a link to a page outside this website;</li>
+        </ol>
+        <p>This matters for a simple reason, <em>external links</em> must open in a new tab/window, while <em>internal links</em> must open in the same tab/window. It would be a pain in the ass to do that by hand with every link but it is easy to do it with JavaScript. So, I implemented a script to go through all links and set the correct value for the <code>target</code> attribute: <code>_blank</code> for external links and <code>_self</code> for internal ones. The code can be found in the <a href="../js/set_links_target_attribute.js">JavaScript file that sets the target attribute of links</a>.</p>
+
         <h3 id="implementation-learning">Learning</h3>
         <p>This project has been very good for me to learn the fundamentals of frontend development. With this, I concluded 5 courses and a specialization:</p>
         <ol>
@@ -158,6 +165,29 @@
         <h2>Release Criteria: Test</h2>
         <p>How many projects did I decide to add? Only one, this portfolio page. I intend to add more projects but for now, it is enough.</p>
         <p>The documents are publicly available at <a href="https://lucasguesserts.github.io/">my personal Github page</a>.</p>
+    </section>
+
+    <section id="solved">
+        <h2>Solved</h2>
+        <p>What are the next steps?</p>
+        <ul>
+            <li>learn more frontend-related things, such as <a href="https://jquery.com/">jQuery</a> or <a href="https://en.wikipedia.org/wiki/Ajax_(programming)">AJAX</a>;</li>
+            <li>learn frontend frameworks:</li>
+            <li><ul>
+                <li><a href="https://getbootstrap.com/">Bootstrap</a>;</li>
+                <li><a href="https://react.dev/">React</a>;</li>
+                <li><a href="https://angular.dev/">Angular</a>;</li>
+                <li><a href="https://vuejs.org/">Vue</a>;</li>
+                <li><a href="https://svelte.dev/">Svelte</a>;</li>
+            </ul></li>
+            <li>learn graph libraries:</li>
+            <li><ul>
+                <li><a href="https://d3js.org/">D3js</a>;</li>
+                <li><a href="https://www.chartjs.org/">Chart.js</a>;</li>
+                <li><a href="https://plotly.com/javascript/">Plotly</a>;</li>
+            </ul></li>
+        </ul>
+        <p>Those are just ideas. What I am actually going to do depends on the requirements of the next project...</p>
     </section>
 </main>
 
