@@ -135,6 +135,10 @@ nav.projects-nav {
     }
 }
 
+video {
+    width: 100%;
+}
+
 body {
     font-size: 1rem;
     background-color: #000000;

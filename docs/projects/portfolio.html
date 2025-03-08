@@ -159,6 +159,15 @@
                 <li><a href="https://www.coursera.org/learn/web-design-project/">Web Design for Everybody Capstone - University of Michigan</a> (<a href="https://web.archive.org/web/20250307113743/https://www.coursera.org/learn/web-design-project/">internet archive</a>)</li>
             </ol></li>
         </ol>
+
+        <h3>Demo</h3>
+        <video controls>
+            <source src="../images/projects/portfolio/portfolio_demo.webm" type="video/webm">
+            This contains a demo of the original portifolio page. Unfortunately, your browser does not support playing videos.
+            <figcaption></figcaption>
+        </video>
+        <p>Video recorded with <a href="https://github.com/phw/peek">Peek</a> and compressed with FFMPEG, with the command below:</p>
+        <p><code>ffmpeg -i input.webm -c:v libvpx-vp9 -b:v 0 -crf 60 -deadline best -row-mt 1 -an -c:a libopus -b:a 96k -ac 2 output.webm</code></p>
     </section>
 
     <section id="release-criteria-test">
@@ -169,6 +178,7 @@
 
     <section id="solved">
         <h2>Solved</h2>
+        <p>The original version is in commit <code>08d4ed70551380d87c72840903cc2afabfbf0d9a</code>.</p>
         <p>What are the next steps?</p>
         <ul>
             <li>learn more frontend-related things, such as <a href="https://jquery.com/">jQuery</a> or <a href="https://en.wikipedia.org/wiki/Ajax_(programming)">AJAX</a>;</li>
