@@ -13,6 +13,47 @@
 
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script>
+        class Carousel {
+            constructor(element) {
+                this.element = element
+                this.images = this.element.getElementsByTagName("figure")
+                for (const img of this.images) {
+                    img.style.visibility = "hidden"
+                    img.position = "relative"
+                    img.top = "0px"
+                }
+                this.currentImage = 0
+                this.numberOfImages = this.images.length
+                this.images[this.currentImage].style.visibility = "visible"
+                // previous button
+                this.previousButton = this.element.getElementsByClassName("previous")[0]
+                this.previousButton.addEventListener("click", () => this.previousImage())
+                // next button
+                this.nextButton = this.element.getElementsByClassName("next")[0]
+                this.nextButton.addEventListener("click", () => this.nextImage())
+            }
+
+            nextImage() {
+                this.images[this.currentImage].style.visibility = "hidden"
+                this.currentImage = (this.currentImage + 1) % this.numberOfImages
+                this.images[this.currentImage].style.visibility = "visible"
+            }
+            previousImage() {
+                this.images[this.currentImage].style.visibility = "hidden"
+                this.currentImage = (this.numberOfImages + this.currentImage - 1) % this.numberOfImages
+                this.images[this.currentImage].style.visibility = "visible"
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".carousel").forEach(carouselElement => {
+                new Carousel(carouselElement);
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -93,56 +134,26 @@
         <p>The final project of course I selected is to develop a portfolio webpage! Here, I am going to document all the design phases.</p>
 
         <h3>Sketches</h3>
-        <div class="carousel">
-            <figure>
-                <img src="../images/projects/portfolio/main_page_sketch.webp" alt="">
-                <figcaption>Sketch of the main page.</figcaption>
-            </figure>
-            <figure>
-                <img src="../images/projects/portfolio/project_page.webp" alt="">
-                <figcaption>Sketch of the page of the project.</figcaption>
-            </figure>
-            <figure>
-                <img src="../images/projects/portfolio/website_map.webp" alt="">
-                <figcaption>Website map.</figcaption>
-            </figure>
+        <div class="carousel" onload="cs.push(new Carousel(this))">
+            <div class="carousel-figures">
+                <figure>
+                    <img src="../images/projects/portfolio/main_page_sketch.webp" alt="">
+                    <figcaption>Sketch of the main page.</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/projects/portfolio/project_page.webp" alt="">
+                    <figcaption>Sketch of the page of the project.</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/projects/portfolio/website_map.webp" alt="">
+                    <figcaption>Website map.</figcaption>
+                </figure>
+            </div>
             <div class="controls">
-                <button onclick="cs[0].previousImage()">Previous</button>
-                <button onclick="cs[0].nextImage()">Next</button>
+                <button class="previous">Previous</button>
+                <button class="next">Next</button>
             </div>
         </div>
-        <script>
-            class Carousel {
-                constructor(element) {
-                    this.element = element
-                    this.images = this.element.getElementsByTagName("figure")
-                    for (const img of this.images) {
-                        img.style.visibility = "hidden"
-                        img.position = "relative"
-                        img.top = "0px"
-                    }
-                    this.currentImage = 0
-                    this.numberOfImages = this.images.length
-                    this.images[this.currentImage].style.visibility = "visible"
-                }
-
-                nextImage() {
-                    this.images[this.currentImage].style.visibility = "hidden"
-                    this.currentImage = (this.currentImage + 1) % this.numberOfImages
-                    this.images[this.currentImage].style.visibility = "visible"
-                }
-                previousImage() {
-                    this.images[this.currentImage].style.visibility = "hidden"
-                    this.currentImage = (this.numberOfImages + this.currentImage - 1) % this.numberOfImages
-                    this.images[this.currentImage].style.visibility = "visible"
-                }
-            }
-
-            const cs = []
-            for (const c of document.querySelectorAll(".carousel")) {
-                cs.push(new Carousel(c))
-            }
-        </script>
 
     </section>
 
