@@ -11,6 +11,7 @@ Color pallete:
 html {
     color: #FFFFFF;
     font-size: 16px;
+    line-height: 1.5;
     background-color: #000000;
     background-image: url("../images/background.webp");
     background-repeat: repeat;
