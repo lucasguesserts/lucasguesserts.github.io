@@ -19,40 +19,58 @@
         class Carousel {
             constructor(element) {
                 this.element = element
-                this.images = this.element.getElementsByTagName("figure")
-                for (const img of this.images) {
+                this.figures = this.element.getElementsByTagName("figure")
+                for (const img of this.figures) {
                     img.style.visibility = "hidden"
-                    img.position = "relative"
-                    img.top = "0px"
                 }
-                this.currentImage = 0
-                this.numberOfImages = this.images.length
-                this.images[this.currentImage].style.visibility = "visible"
+                this.currentFigure = 0
+                this.numberOfFigures = this.figures.length
+                this.figures[this.currentFigure].style.visibility = "visible"
                 // previous button
                 this.previousButton = this.element.getElementsByClassName("previous")[0]
                 this.previousButton.addEventListener("click", () => this.previousImage())
                 // next button
                 this.nextButton = this.element.getElementsByClassName("next")[0]
                 this.nextButton.addEventListener("click", () => this.nextImage())
+                // height
+                this.resetHeight()
+                window.addEventListener("resize", (event) => this.resetHeight())
             }
 
             nextImage() {
-                this.images[this.currentImage].style.visibility = "hidden"
-                this.currentImage = (this.currentImage + 1) % this.numberOfImages
-                this.images[this.currentImage].style.visibility = "visible"
+                this.figures[this.currentFigure].style.visibility = "hidden"
+                this.currentFigure = (this.currentFigure + 1) % this.numberOfFigures
+                this.figures[this.currentFigure].style.visibility = "visible"
             }
+
             previousImage() {
-                this.images[this.currentImage].style.visibility = "hidden"
-                this.currentImage = (this.numberOfImages + this.currentImage - 1) % this.numberOfImages
-                this.images[this.currentImage].style.visibility = "visible"
+                this.figures[this.currentFigure].style.visibility = "hidden"
+                this.currentFigure = (this.numberOfFigures + this.currentFigure - 1) % this.numberOfFigures
+                this.figures[this.currentFigure].style.visibility = "visible"
+            }
+
+            resetHeight() {
+                let height = 0
+                const imgs = this.element.getElementsByTagName("img")
+                for (let i = 0; i < this.figures.length; ++i) {
+                    let image = this.figures[i].getElementsByTagName("img")[0]
+                    let caption = this.figures[i].getElementsByTagName("figcaption")[0]
+                    let rescaleFactor = this.figures[i].clientWidth / imgs[i].naturalWidth
+                    let newHeight = rescaleFactor * imgs[i].naturalHeight + caption.clientHeight
+                    if (newHeight > height) {
+                        rescaleFactor = rescaleFactor
+                        height = newHeight
+                    }
+                }
+                this.element.style.height = height + "px"
             }
         }
 
         document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll(".carousel").forEach(carouselElement => {
-                new Carousel(carouselElement);
-            });
-        });
+                new Carousel(carouselElement)
+            })
+        })
     </script>
 </head>
 
@@ -134,7 +152,8 @@
         <p>The final project of course I selected is to develop a portfolio webpage! Here, I am going to document all the design phases.</p>
 
         <h3>Sketches</h3>
-        <div class="carousel" onload="cs.push(new Carousel(this))">
+        <div class="carousel">
+            <button class="previous">&lt;</button>
             <div class="carousel-figures">
                 <figure>
                     <img src="../images/projects/portfolio/main_page_sketch.webp" alt="">
@@ -149,10 +168,7 @@
                     <figcaption>Website map.</figcaption>
                 </figure>
             </div>
-            <div class="controls">
-                <button class="previous">Previous</button>
-                <button class="next">Next</button>
-            </div>
+            <button class="next">&gt;</button>
         </div>
 
     </section>
