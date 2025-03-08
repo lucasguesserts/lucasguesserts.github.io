@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+    <title>L. Guesser - Portfolio Website</title>
+    <link rel="icon" type="image/x-icon" href="../images/lg.ico">
+    <meta name="author" content="Lucas Guesser">
+    <meta name="description" content="Lucas Guesser - Portfolio Project.">
+    <meta name="keywords" content="Lucas Guesser,portfolio,personal,site,contact">
+
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../js/set_links_target_attribute.js"></script>
+    <script src="../js/carousel.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/carousel.css">
+</head>
+
+<body>
+
+<header id="top">
+    <nav class="secondary-nav">
+        <ul>
+            <li><a href="../index.html">Main Page</a></li>
+            <li><a href="./projects.html">Projects</a></li>
+        </ul>
+    </nav>
+    <h1>Project: Portfolio Website</h1>
+</header>
+
+<main>
+    <section id="description">
+        <h2>Description</h2>
+
+        <h3>Current State</h3>
+        <p>I do not have a portfolio to present to people.</p>
+
+        <h3>Target State</h3>
+        <p>To have a document, or a collection of documents, with projects I developed over the years so people (and myself) can see my work.</p>
+    </section>
+
+    <section id="release-criteria-disambiguation">
+        <h2>Release Criteria: Disambiguation</h2>
+        <p>The issue is solved when there are documents publicly available on the internet with projects I worked on over the years.</p>
+    </section>
+
+    <section id="how-map-changes">
+        <h2>How: Map Changes</h2>
+        <p><i>Seek/list possible solutions and Understand/map the implications/impacts of each of the solutions.</i></p>
+
+        <h3>Markup Language</h3>
+        <p>The first part of the problem is: what format am I going to use to write the documents? What are my options? Given the format, I should also consider how to make it available online. Well, there are many possible solutions here:</p>
+        <dl>
+            <dt>Latex ❌</dt><dd>I have been using Latex to write academic documents for a long time and I like it a lot. It is powerful and extensible, it has a rich package ecosystem, and there are many resources online (tutorials, Q&amp;A, ...). I could publish projects in the format of a scientific paper or a technical report. Would people read boring papers? Probably not 😅! Is it easy to access and read? Well, people may prefer to download it instead of reading it on the browser. Given that no one has the <em>Downloads directory</em> clean, it is unlikely they are going to make the effort.</dd>
+            <dt>Markdown ❌</dt><dd>Latex is cool but it may be too much for what I want. Markdown on the other hand is much cleaner and simpler. It allows me to focus on the content and write things quickly, without having to worry about anything else. Moreover, there are many projects on the internet that transform markdown into webpages. In the past, I used <a href="https://gohugo.io/">Hugo</a>, which is nice for people who just want to put content on a webpage. You pick a theme, add your content, and voilà, you have a good-looking page. However, my requirements are different, I want to have more power over the technology I am using, and I want to know how it works under the hood.</dd>
+            <dt>Docs ❌</dt><dd>Simply no! 😤</dd>
+            <dt>HTML ✅</dt><dd>This is <em>"the language of the web"</em>. There is one problem though: it has a steep learning curve because one has to learn HTML, CSS, JavaScript, and possibly some framework. But really, is that a bad thing? Actually, I have been neglecting <em>frontend</em> for quite some time now in my career when I should not. This seems to be a nice opportunity to focus on it, learn the foundations of those technologies, and use them for the rest of my life. Besides, I have been using Python to create visualizations, and maybe HTML+JavaScript would be a better choice in some situations. This can pay off in many ways... Finally, this is the most accessible solution: EVERYONE has access to a web browser.</dd>
+        </dl>
+
+        <h3>Framework</h3>
+        <p>I chose to use HTML. Will I use pure HTML+CSS+JavaScript (code everything by hand) or will I use a framework such as React, Angular, Vue, and Svelte? I am going for the former because I want to learn the fundamentals of web development, so using only those technologies maximizes my learning. It may be more difficult to build a good-looking website, but that is part of the journey.</p>
+
+        <h3>Static or Dynamic Website</h3>
+        <p>Only one part of the problem has been solved: how to write and format the content. There are many other pieces in this puzzle. Do I want a <em>Static Website</em> or a <em>Dynamic Website</em>? Dynamic websites would require me to learn and use a web application framework such as Django, Express, Ruby on Rails, ... Hosting would also be more complicated since I would have to keep a server running the service. On the other hand, it gives me more power. Static websites are simpler, I can implement them only with HTML, CSS, and JavaScript and any tool that can serve files can host it.</p>
+        <p>In my case, I do not currently need the power that comes with web application frameworks, I simply need a page that can be served as a file. So, I decided to use Static Websites.</p>
+
+        <h3>Hosting</h3>
+        <p>I want the easiest and cheapest thing available for now (later on, I think about improving it). What are my specific requirements? I want to host a static website! What are the easiest and cheapest tools that get the work done? <a href="https://pages.github.com/">Github pages</a> and <a href="https://pages.cloudflare.com/">Cloudfare Pages</a> just get it done. Since I have previous experience with GitHub Pages, I am going to use it.</p>
+
+        <h3>Learning</h3>
+        <p>I do not know how HTML and CSS. Though I do know JavaScript, I have little experience in using it to manipulate the DOM. It means that I need a resource to learn. So, what are my requirements? A good course for me must:</p>
+        <ol>
+            <li>give me a certificate, optimally from a university;</li>
+            <li>start from the basics (I prefer to assume no prior knowledge, I guess I will learn more and better in that way);</li>
+            <li>be short so I can get started quickly;</li>
+            <li>teach me enough to develop the portfolio project;</li>
+            <li>be cheap</li>
+        </ol>
+        <p>I have the following options:</p>
+        <ol>
+            <li>Coursera ✅ I have free access because of my university (Unicamp). It is taught by universities, it gives certificates, and I liked the previous courses I did, they are very good;</li>
+            <li>CodeAcademy ❌: expensive, and the free plan doesn't give a certificate;</li>
+            <li>Udemy ❌: no! I have done courses there and some are good, but I do not like how they do things on the platform;</li>
+            <li>W3School ❌: too simple;</li>
+        </ol>
+        <p>I opted for the <a href="https://www.coursera.org/specializations/web-design">Web Design for Everybody: Basics of Web Development & Coding Specialization - University of Michigan:</a>. The links to each course in the specialization are available in the <a href="#implementation-learning">implementation-learning section</a>.</p>
+
+        <h3>Solution Proposal</h3>
+        <p>Write the pages by hand using HTML, CSS, and JavaScript and host it as a static website on GitHub Pages. Do the web development course and develop the website along the way.</p>
+    </section>
+
+    <section id="implementation">
+        <h2>Implementation</h2>
+        <p>For the final project of the course, I decided to develop a portfolio webpage! Here, I am going to document all the design phases.</p>
+
+        <h3>Sketches</h3>
+        <div class="carousel">
+            <div class="carousel-figures">
+                <figure>
+                    <img src="../images/projects/portfolio/main_page_sketch.webp" alt="">
+                    <figcaption>Sketch of the main page.</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/projects/portfolio/project_page.webp" alt="">
+                    <figcaption>Sketch of the page of the project.</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/projects/portfolio/website_map.webp" alt="">
+                    <figcaption>Website map.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <h3>Carousel</h3>
+        <p>Have you notice the <em>Carousel</em> above? It does not use any external library. I could have used something like <a href="https://getbootstrap.com/docs/4.1/components/carousel/">Bootstrap Carousel</a> but I have more fun and I learn more by implementing it myself!</p>
+
+        <h3>Color Palette</h3>
+        <p>I like dark pages, so I did mine using a dark color palette. For that, I used <a href="https://coolors.co/">Coolors</a>. With that, I selected the following colors:</p>
+        <dl>
+            <dt>black:</dt><dd style="border: solid #FFFFFF 1px; color: #FFFFFF; background-color: #000000;"><code>#000000</code></dd>
+            <dt>davys-gray:</dt><dd style="border: solid #FFFFFF 1px; color: #FFFFFF; background-color: #5E5E5E;"><code>#5E5E5E</code></dd>
+            <dt>silver:</dt><dd style="border: solid #FFFFFF 1px; color: #000000; background-color: #C0C0C0;"><code>#C0C0C0</code></dd>
+            <dt>antiflash-white:</dt><dd style="border: solid #FFFFFF 1px; color: #000000; background-color: #EBEBEB;"><code>#EBEBEB</code></dd>
+            <dt>white: </dt><dd style="border: solid #FFFFFF 1px; color: #000000; background-color: #FFFFFF;"><code>#FFFFFF</code></dd>
+        </dl>
+
+        <h3>Inspirations / Examples</h3>
+        <p>Before implementing, I checked some nice personal websites. I wanted to identify characteristics I like and that I do not like. Below is a list of websites I used as inspiration:</p>
+        <ol>
+            <li><a href="https://mateusfcolla.github.io/">Mateus Felipe Colla</a> (<a href="https://web.archive.org/web/20250308153943/https://mateusfcolla.github.io/">page on web archive</a>);</li>
+            <li><a href="https://blog.codinghorror.com/">Coding Horror</a> (<a href="https://web.archive.org/web/20250308153928/https://blog.codinghorror.com/">page on web archive</a>);</li>
+            <li><a href="https://blog.avas.space/">Ava's blog</a> (<a href="https://web.archive.org/web/20250308153926/https://blog.avas.space/">page on web archive</a>);</li>
+            <li><a href="https://soatok.blog/b/">Dhole</a> (<a href="https://web.archive.org/web/20250308154057/https://soatok.blog/b/">page on web archive</a>);</li>
+            <li><a href="https://riziovo.com/index.html">Rishi</a> (<a href="https://web.archive.org/web/20250308153906/https://riziovo.com/index.html">page on web archive</a>);</li>
+            <li><a href="https://jeandedieu.vercel.app/">Jean de Dieu</a> (<a href="https://web.archive.org/web/20250308153856/https://jeandedieu.vercel.app/">page on web archive</a>);</li>
+            <li><a href="https://www.chnspart.com/">Touhidul Islam Chayan</a> (<a href="https://web.archive.org/web/20250308153848/https://www.chnspart.com/portfolio">page on web archive</a>);</li>
+        </ol>
+        <p>I realized that what I wanted was a clean page, with the text in a readable and comfortable width. I did not want anything fancy: no animation, nothing hidden, no drop-down menu. Just a page for people to read with a navigation menu on top.</p>
+
+        <h3>Internal and Extenal Links</h3>
+        <ol>
+            <li>Internal Link: a link to a page on this website;</li>
+            <li>External Link: a link to a page outside this website;</li>
+        </ol>
+        <p>This matters for a simple reason, <em>external links</em> must open in a new tab/window, while <em>internal links</em> must open in the same tab/window. It would be a pain in the ass to do that by hand with every link but it is easy to do it with JavaScript. So, I implemented a script to go through all links and set the correct value for the <code>target</code> attribute: <code>_blank</code> for external links and <code>_self</code> for internal ones. The code can be found in the <a href="../js/set_links_target_attribute.js">JavaScript file that sets the target attribute of links</a>.</p>
+
+        <h3 id="implementation-learning">Learning</h3>
+        <p>This project has been very good for me to learn the fundamentals of frontend development. With this, I concluded 5 courses and a specialization:</p>
+        <ol>
+            <li><a href="https://www.coursera.org/specializations/web-design">Web Design for Everybody: Basics of Web Development & Coding Specialization - University of Michigan:</a> (<a href="https://web.archive.org/web/20250307114004/https://www.coursera.org/specializations/web-design">internet archive</a>)
+            <ol>
+                <li><a href="https://www.coursera.org/learn/html">Introduction to HTML5 - University of Michigan</a> (<a href="https://web.archive.org/web/20250307113601/https://www.coursera.org/learn/html">internet archive</a>)</li>
+                <li><a href="https://www.coursera.org/learn/introcss/">Introduction to CSS3 - University of Michigan</a> (<a href="https://web.archive.org/web/20250307113613/https://www.coursera.org/learn/introcss/">internet archive</a>)</li>
+                <li><a href="https://www.coursera.org/learn/javascript">Interactivity with JavaScript - University of Michigan</a> (<a href="https://web.archive.org/web/20250307113741/https://www.coursera.org/learn/javascript">internet archive</a>)</li>
+                <li><a href="https://www.coursera.org/learn/responsivedesign/">Advanced Styling with Responsive Design - University of Michigan</a> (<a href="https://web.archive.org/web/20250307113628/https://www.coursera.org/learn/responsivedesign/">internet archive</a>)</li>
+                <li><a href="https://www.coursera.org/learn/web-design-project/">Web Design for Everybody Capstone - University of Michigan</a> (<a href="https://web.archive.org/web/20250307113743/https://www.coursera.org/learn/web-design-project/">internet archive</a>)</li>
+            </ol></li>
+        </ol>
+    </section>
+
+    <section id="release-criteria-test">
+        <h2>Release Criteria: Test</h2>
+        <p>How many projects did I decide to add? Only one, this portfolio page. I intend to add more projects but for now, it is enough.</p>
+        <p>The documents are publicly available at <a href="https://lucasguesserts.github.io/">my personal Github page</a>.</p>
+    </section>
+
+    <section id="solved">
+        <h2>Solved</h2>
+        <p>What are the next steps?</p>
+        <ul>
+            <li>learn more frontend-related things, such as <a href="https://jquery.com/">jQuery</a> or <a href="https://en.wikipedia.org/wiki/Ajax_(programming)">AJAX</a>;</li>
+            <li>learn frontend frameworks:</li>
+            <li><ul>
+                <li><a href="https://getbootstrap.com/">Bootstrap</a>;</li>
+                <li><a href="https://react.dev/">React</a>;</li>
+                <li><a href="https://angular.dev/">Angular</a>;</li>
+                <li><a href="https://vuejs.org/">Vue</a>;</li>
+                <li><a href="https://svelte.dev/">Svelte</a>;</li>
+            </ul></li>
+            <li>learn graph libraries:</li>
+            <li><ul>
+                <li><a href="https://d3js.org/">D3js</a>;</li>
+                <li><a href="https://www.chartjs.org/">Chart.js</a>;</li>
+                <li><a href="https://plotly.com/javascript/">Plotly</a>;</li>
+            </ul></li>
+        </ul>
+        <p>Those are just ideas. What I am actually going to do depends on the requirements of the next project...</p>
+    </section>
+</main>
+
+<footer>
+    <p>Background by <a href="https://unsplash.com/@dancristianpaduret">Dan Cristian Pădureț</a> on <a href="https://unsplash.com/photos/a-blackboard-with-a-bunch-of-diagrams-on-it-h3kuhYUCE9A">Unsplash</a>
+    </p>
+    <p>&copy; 2025 Lucas Guesser. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,21 +1,55 @@
+/*
+Color pallete:
+
+- black: #000000;
+- davys-gray: #5E5E5E;
+- silver: #C0C0C0;
+- antiflash-white: #EBEBEB;
+- white: #FFFFFF;
+*/
+
 html {
-    color: #FFF;
+    color: #FFFFFF;
     font-size: 16px;
-    background-color: #000;
+    line-height: 1.5;
+    background-color: #000000;
     background-image: url("../images/background.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
+    background-repeat: repeat;
+    background-size: 50%;
+}
+
+@media all and (min-width: 700px) {
+    html {
+        font-size: 20px;
+    }
 }
 
 /* elements default */
 
 h1 {
     font-size: 2.5em;
+    font-weight: bold;
     text-align: center;
 }
-h3 {
+h2 {
     font-size: 2em;
+    font-weight: bold;
+}
+h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+h4 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+h5 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+h6 {
+    font-size: 1.1em;
+    font-weight: bold;
 }
 .personal-title {
     font-size: 1.5em;
@@ -24,11 +58,11 @@ h3 {
     text-align: center;
 }
 a {
-    color: #A8A8FF;
+    color: #FFFFFF;
     text-decoration: underline;
 }
 a:visited {
-    color: #CDA8F0;
+    color: #FFFFFF;
 }
 abbr {
     text-decoration: none;
@@ -36,20 +70,35 @@ abbr {
 abbr:hover {
     text-decoration: underline dotted;
 }
+figure {
+    text-align: center;
+    width: 100%;
+    margin: 1em auto;
+}
+img {
+    width: 100%;
+}
 
 /* modules */
 
 header {
     font-size: 1rem;
+    figure {
+        max-width: 250px;
+    }
 }
 
 nav {
     font-size: 1rem;
     margin-top: 1em;
     margin-bottom: 1em;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    align-items: center;
     ul {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-evenly;
         list-style-type: none;
         align-items: center;
@@ -62,23 +111,33 @@ nav {
     a {
         box-sizing: border-box;
         display: inline-block;
-        color: #FFF;
         text-decoration: none;
-        background-color: #444;
+        background-color: #5E5E5E;
         padding: 1em;
         text-align: center;
         border-radius: 10px;
         width: 100%;
     }
     a:visited {
-        color: #FFF;
         text-decoration: none;
+    }
+}
+
+nav.secondary-nav {
+    font-size: 0.8rem;
+    margin: 0em 0em;
+}
+
+nav.projects-nav {
+    border-bottom: none;
+    ul {
+        flex-direction: column;
     }
 }
 
 body {
     font-size: 1rem;
-    background-color: #000;
+    background-color: #000000;
     font-family: Arial, sans-serif;
     max-width: 768px;
     width: 100%;
@@ -99,13 +158,6 @@ footer {
 }
 
 /* elements */
-
-figure {
-    text-align: center;
-    max-width: 250px;
-    width: 100%;
-    margin: 1em auto;
-}
 #profile-picture {
     width: 100%;
 }
@@ -115,3 +167,5 @@ figure {
     font-weight: bold;
     font-style: normal;
 }
+
+
