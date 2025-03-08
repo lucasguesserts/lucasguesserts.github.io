@@ -19,31 +19,50 @@
         class Carousel {
             constructor(element) {
                 this.element = element
-                this.figures = this.element.getElementsByTagName("figure")
-                for (const img of this.figures) {
-                    img.style.visibility = "hidden"
+                this.initializeFigures()
+                if (this.figures.length === 0) {
+                    this.element.remove()
+                    return
                 }
-                this.currentFigure = 0
-                this.numberOfFigures = this.figures.length
-                this.figures[this.currentFigure].style.visibility = "visible"
-                // previous button
-                this.previousButton = this.element.getElementsByClassName("previous")[0]
-                this.previousButton.addEventListener("click", () => this.previousImage())
-                // next button
-                this.nextButton = this.element.getElementsByClassName("next")[0]
-                this.nextButton.addEventListener("click", () => this.nextImage())
-                // height
+                this.createNextButton()
+                this.createPreviousButton()
                 this.resetHeight()
                 window.addEventListener("resize", (event) => this.resetHeight())
             }
 
-            nextImage() {
+            initializeFigures() {
+                this.figures = this.element.getElementsByTagName("figure")
+                for (const fig of this.figures) {
+                    fig.style.visibility = "hidden"
+                }
+                this.currentFigure = 0
+                this.numberOfFigures = this.figures.length
+                if (this.figures.length > 0) {
+                    this.figures[this.currentFigure].style.visibility = "visible"
+                }
+            }
+
+            createNextButton() {
+                this.nextButton = document.createElement("button")
+                this.nextButton.innerHTML = ">"
+                this.element.appendChild(this.nextButton)
+                this.nextButton.addEventListener("click", () => this.goToNextFigure())
+            }
+
+            createPreviousButton() {
+                this.previousButton = document.createElement("button")
+                this.previousButton.innerHTML = "<"
+                this.element.insertBefore(this.previousButton, this.element.firstChild)
+                this.previousButton.addEventListener("click", () => this.goToPreviousFigure())
+            }
+
+            goToNextFigure() {
                 this.figures[this.currentFigure].style.visibility = "hidden"
                 this.currentFigure = (this.currentFigure + 1) % this.numberOfFigures
                 this.figures[this.currentFigure].style.visibility = "visible"
             }
 
-            previousImage() {
+            goToPreviousFigure() {
                 this.figures[this.currentFigure].style.visibility = "hidden"
                 this.currentFigure = (this.numberOfFigures + this.currentFigure - 1) % this.numberOfFigures
                 this.figures[this.currentFigure].style.visibility = "visible"
@@ -51,18 +70,23 @@
 
             resetHeight() {
                 let height = 0
-                const imgs = this.element.getElementsByTagName("img")
                 for (let i = 0; i < this.figures.length; ++i) {
-                    let image = this.figures[i].getElementsByTagName("img")[0]
-                    let caption = this.figures[i].getElementsByTagName("figcaption")[0]
-                    let rescaleFactor = this.figures[i].clientWidth / imgs[i].naturalWidth
-                    let newHeight = rescaleFactor * imgs[i].naturalHeight + caption.clientHeight
+                    const images = this.figures[i].getElementsByTagName("img")
+                    if (images.length === 0) { continue }
+                    const image = this.figures[i].getElementsByTagName("img")[0]
+                    const captions = this.figures[i].getElementsByTagName("figcaption")
+                    const caption = this.figures[i].getElementsByTagName("figcaption")[0]
+                    const captionHeight = (captions.length > 0) ? captions[0].clientHeight : 0
+                    const rescaleFactor = this.figures[i].clientWidth / image.naturalWidth
+                    const newHeight = rescaleFactor * image.naturalHeight + caption.clientHeight
                     if (newHeight > height) {
-                        rescaleFactor = rescaleFactor
                         height = newHeight
                     }
                 }
                 this.element.style.height = height + "px"
+                if (height === 0) {
+                    this.element.style = "hidden"
+                }
             }
         }
 
@@ -153,7 +177,6 @@
 
         <h3>Sketches</h3>
         <div class="carousel">
-            <button class="previous">&lt;</button>
             <div class="carousel-figures">
                 <figure>
                     <img src="../images/projects/portfolio/main_page_sketch.webp" alt="">
@@ -168,9 +191,7 @@
                     <figcaption>Website map.</figcaption>
                 </figure>
             </div>
-            <button class="next">&gt;</button>
         </div>
-
     </section>
 
     <section id="release-criteria-test">
