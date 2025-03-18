@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "vite": "^6.1.1"
+  },
+  "scripts": {
+    "start": "vite docs/"
   }
 }
