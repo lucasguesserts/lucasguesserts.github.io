@@ -51,6 +51,9 @@ h6 {
     font-size: 1.1em;
     font-weight: bold;
 }
+em {
+    font-weight: bold;
+}
 .personal-title {
     font-size: 1.5em;
     margin-top: 0.83em 0;
@@ -77,6 +80,25 @@ figure {
 }
 img {
     width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #FFFFFF;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #5E5E5E;
+}
+caption {
+    caption-side: bottom;
+    text-align: center;
+    padding-top: 10px;
 }
 
 /* modules */
