@@ -164,6 +164,7 @@ footer {
 /* elements */
 #profile-picture {
     width: 100%;
+    border-radius: 50%;
 }
 #very-short-description {
     display: block;
