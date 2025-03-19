@@ -31,22 +31,24 @@
 <main>
     <h1>3D-SCLP</h1>
 
+    <p>This is the project presented to the Institute of Computing of the University of Campinas in partial fulfillment of the requirements for the degree of Master of Science in Computer Science. I presented it to an evaluation committee on February 19th, 2025. You can watch it in the <a href="#presentation">presentation section</a>.</p>
+
     <section id="history">
         <h2>History</h2>
 
-        <p>After I graduated in Mechanical Engineering, I started working at <a href="https://jettacargo.com.br/en">JettaCargo</a> with logistic optimizations. I actually had not worked with that topic before joining them so it was quite a challenge. I did some amazing work that I am very proud of.</p>
+        <p>After I graduated in Mechanical Engineering, I started working at <a href="https://jettacargo.com.br/en">JettaCargo</a> with logistic optimizations. It was challenging to work on a topic I had no previous experience. Nevertheless, I did some amazing work that I am very proud of.</p>
 
-        <p>However, after some time there, I noticed I had too many gaps in my knownledge. I was studying and learning with my colleagues but something was odd, I felt like we were missing something. I decided I would look for it. I searched the internet for good universities in Brazil on Operations Research and I found <a href="https://unicamp.br/">Unicamp</a>, more specifically I found the <a href= "https://www.loco.ic.unicamp.br/">Laboratory of Optimization and Combinatorics (LOCo)</a>, a large research group dedicated to solving the problems that I was interested.</p>
+        <p>However, after some time there, I noticed I had too many gaps in my knowledge. Though I was studying and learning with my colleagues, something was odd. I felt like I was missing something. So, I decided I would look for it. How? I searched the internet for good universities in Brazil on Operations Research and I found <a href="https://unicamp.br/">Unicamp</a>, more specifically I found the <a href= "https://www.loco.ic.unicamp.br/">Laboratory of Optimization and Combinatorics (LOCo)</a>, a large research group dedicated to solving the problems that I was interested.</p>
 
-        <p>I joined Unicamp to do a Master's in Computer Science. I chose Professors <a href="https://ic.unicamp.br/~fkm/">Flávio Keidi Miyazawa</a> and <a href="https://sites.google.com/ufcat.edu.br/taq/">Thiago Alves de Queiroz</a> to be my supervisor me because, among the professors of Unicamp, he was the one most aligned with my research interest: three-dimensional packing problems.</p>
+        <p>I joined Unicamp to pursue a Master's in Computer Science, hoping to fill the gaps in my knowledge. I chose <a href="https://ic.unicamp.br/~fkm/">Professor Flávio Keidi Miyazawa</a> to be my supervisor because, among the professors of Unicamp, he was the one most aligned with my research interest: three-dimensional packing problems. Later on, <a href="https://sites.google.com/ufcat.edu.br/taq/">Professor Thiago Alves de Queiroz</a> joined as co-advisor.</p>
     </section>
 
     <section id="problem-definition">
         <h2>Problem Definition</h2>
 
-        <p>From the beginning, I made it clear that I wished study and solve a three-dimensional single container packing problem, mostly because that was the main problem we solved at JettaCargo. The question was then which practical constraints we would add to the base problem. After lots of research and study, we decided to add no practical constraint and go to beating the current state-of-the-art algorithm. We are audacious!</p>
+        <p>From the beginning, I made it clear I wished to study and solve a three-dimensional single container packing problem, mostly because that was the main problem we solved at JettaCargo. The question was then which practical constraints we would add to the base problem. After extensive research and study, we decided to impose no practical constraint and beat the current state-of-the-art algorithm. We are audacious!</p>
 
-        <p>In simple terms, the problem is defined by a set of Items and a Container. Both the items and the container are <a href="https://en.wikipedia.org/wiki/Rectangular_cuboid">rectangular cuboids</a>. The items have quantity (the number of that item that is available for allocating). Furthermore, each item has a set of up to six allowed orientations, meaning one can rotate then when allocating.</p>
+        <p>In simple terms, the problem is defined by a set of Items and a Container. Both the items and the container are <a href="https://en.wikipedia.org/wiki/Rectangular_cuboid">rectangular cuboids</a>. The items have a quantity (the number of that item that is available for allocating). Furthermore, each item has a set of up to six allowed orientations, meaning one can rotate them when allocating.</p>
 
         <figure>
             <img src="../images/projects/3d_sclp/problem_definition.png">
@@ -68,7 +70,7 @@
 
         <dl>
             <dt><code>PE-08</code> - Parreño et al. (2008)</dt><dd>compare the partition and cover representation for the residual space, they show that the latter yields better results;</dd>
-            <dt><code>FB-10</code> - Fanslau and Bortfeldt (2010)</dt><dd>propose a tree search-based heuristic to solve the problem, this is the base of all subsequent tree search-based proposals;</dd>
+            <dt><code>FB-10</code> - Fanslau and Bortfeldt (2010)</dt><dd>propose a tree search-based heuristic to solve the problem, that is the basis of all subsequent tree search-based proposals;</dd>
             <dt><code>GR-12</code> - Goncalves and Resende (2012)</dt><dd>propose successful a Biased Random-Key Genetic Algorithms (BRKGA) for the 3D-SCPL;</dd>
             <dt><code>ZE-12</code> - Zhu et al. (2012)</dt><dd>simplified and improved the tree search-based heuristic of Fanslau and Bortfeldt (2010);</dd>
             <dt><code>ZH-12</code> - Zhang et al. (2012)</dt><dd>poposed the use of the contact surface to select blocks;</dd>
@@ -141,8 +143,8 @@
             <dt>Data Structures:</dt>
             <dd>
                 <ol>
-                    <li> to implement the residual space, the state-of-the-art uses linked lists while we use a data structures with contiguous memory layout;</li>
-                    <li> to find the contact area between blocks, the state-of-the-art used the  external library <a href="https://github.com/bulletphysics/bullet3">Bullet</a>, that relies on collision detection methods, while we used a broad and narrow search technique combined with a contiguous memory storage.</li>
+                    <li> to implement the residual space, the state-of-the-art uses linked lists while we use data structures with contiguous memory layout;</li>
+                    <li> to find the contact area between blocks, the state-of-the-art used the external library <a href="https://github.com/bulletphysics/bullet3">Bullet</a>, which relies on collision detection methods, while we used a broad and narrow search technique combined with a contiguous memory storage.</li>
                 </ol>
             </dd>
             <dt>Skip Feature:</dt><dd>we added a mechanism that avoid recomputations.</dd>
@@ -150,8 +152,6 @@
             <dt>Configuration:</dt><dd>both our and the state-of-the-art heuristics require the specification of parameters. To find good values, the state-of-the-art performed a manual search while we used <a href="https://www.rdocumentation.org/packages/irace/">irace</a> for automatic algorithm configuration;</dd>
             <dt>Evaluation Function:</dt><dd>we used a two-stage modification of the fitness function proposed by the state-of-the-art, allowing the heuristic to adapt and change its behavior at different phases of the allocation process;</dd>
         </dl>
-
-
     </section>
 
     <section id="results">
@@ -184,23 +184,33 @@
         </table>
 
         <h3>Time Equivalence</h3>
-        <p>The figure below presents the time required by state-of-the-art (A) to reach the results the proposed heuristic (H). The full black line shows the experimental result. Because of its apparent linear behavior, we made a linear curve fit <code>f(t) = &alpha; &centerdot; t</code> to identify the angular coefficient <code>&alpha;</code>. The results demonstrate that <em>H performs as well as A with one sixteenth of the time</em>. In other words, given a time limit <code>T</code> to heuristic H, it would take <code>16&centerdot;T</code> for A to reach the same result.</p>
+        <p>The figure below presents the time required by state-of-the-art (A) to reach the results of the proposed heuristic (H). The full black line shows the experimental result. Because of its apparent linear behavior, we made a linear curve fit <code>f(t) = &alpha; &centerdot; t</code> to identify the angular coefficient <code>&alpha;</code>. The results demonstrate that <em>H performs as well as A with one-sixteenth of the time</em>. In other words, given a time limit <code>T</code> to heuristic H, it would take <code>16&centerdot;T</code> for A to reach the same result.</p>
         <figure>
             <img src="../images/projects/3d_sclp/time_for_A_to_reach_H.png">
             <figcaption>Time required for state-of-the-art (A) to reach the results of the proposed heuristic (H). On the left, the time required by A is limited to 2000 seconds. On the right, the time limit given to H is limited to 10 seconds. In full black line, the experimental data. In gray dashed lines, a curve fit of the function <code>f(t) = &alpha; &centerdot; t</code>. The value of <code>&alpha;</code> is displayed in each graph.</figcaption>
         </figure>
-    </section>
 
-    <section id="conclusion">
-        <h2>Conclusion</h2>
-        <p>Joining LOCo was the right choice. I developed a cool work and I was able to outperform the current state-of-the-art algorithm of the 3D-SCLP. I also came into contact with many different topics, solution techniques, and people, further expanding my knownledge on Algorithms, Combinatorial Optimization, and Operations Research. I am grateful for the supervision of Flávio and Thiago and all the people who were part of my journey.</p>
+        <h3>Packings</h3>
+        <p>Some solutions, i.e. packings, are displayed below.</p>
+        <figure>
+            <img src="../images/projects/3d_sclp/packings.png">
+            <figcaption>Four packings. On the top left, a homogeneous packing (one item type). On the top right, a weakly heterogeneous packing (3 item types). On the bottom left and right, two strongly heterogeneous packings (many item types).</figcaption>
+        </figure>
     </section>
 
     <section id="presentation">
+        <h2>Presentation</h2>
         <video controls>
             <source src="../attachments/projects/3d_sclp/masters_presentation_lucasguesserts.webm" type="video/webm">
             Sorry, it seems that your browser does not support playing videos.
           </video>
+    </section>
+
+    <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>Joining LOCo was the right choice. I developed a cool work and I was able to outperform the current state-of-the-art algorithm of the 3D-SCLP. I also came into contact with many different topics, solution techniques, and people, further expanding my knowledge of Algorithms, Combinatorial Optimization, and Operations Research. I am grateful for the supervision of Flávio and Thiago and all the people who were part of my journey.</p>
+
+        <p>We made a nice work and obtained very good results! We intend to publish a paper and open-source the code.</p>
     </section>
 
     <section id="references">
