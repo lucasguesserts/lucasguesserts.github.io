@@ -6,8 +6,8 @@ This serves as my personal website. Currently, I am developing it to contain my 
 
 ```sh
 npm install
-npx vite docs/
-# vite prints the information to open the page
+npx start
+# it prints the information to open the page
 ```
 
 Dependencies:
