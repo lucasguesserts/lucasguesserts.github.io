@@ -158,9 +158,7 @@
             <dt>Motivation:</dt>
                 <dd>Many problems, structures, or other ideas communicated in a prompt may be more concisely, unam- biguously, or clearly expressed in a language other than English.</dd>
             <dt>Structure and Key Ideas:</dt>
-                <dd>
-                    <blockquote>When I say X, I mean Y (or would like you to do Y)</blockquote>
-                </dd>
+                <dd>When I say X, I mean Y (or would like you to do Y)</dd>
             <dt>Examples:</dt>
                 <dd>From now on, whenever I type two identifiers separated by a &rarr;, I am describing a graph. For example, <code>a &rarr; b</code> is describing a graph with nodes <code>a</code> and <code>b</code> and an edge between them. If I separate identifiers by <code>-[w:2, z:3]&rarr;</code>, I am adding properties of the edge, such as a weight or label.</dd>
             <dt>Consequences (pros and cons):</dt>
@@ -168,6 +166,27 @@
                     It may create the potential for confusion within the LLM. As important as it is to clearly define the semantics of the language, it is also essential to ensure the language itself introduces no ambiguities that degrade the LLM's performance or accuracy.<br>
                     Using a single meta-language-per-conversation session may also be a best practice since it avoids the potential for conflicting or unexpected semantics being applied to the conversation over time.
                 </dd>
+        </dl>
+    </section>
+
+    <section id="output-automater-pattern">
+        <h2>The Output Automater Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>The goal is to reduce the manual effort needed to implement any LLM output recommendations.</dd>
+            <dt>Motivation:</dt>
+                <dd>The output of an LLM is often a sequence of steps for the user to follow. However, having users continually perform the manual steps dictated by LLM output is tedious and error-prone.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd>
+                    Whenever you produce an output that has at least one step to take and the following properties (alternatively, always do this) X<br>Produce an executable artifact of type Y that will automate these steps
+                </dd>
+            <dt>Examples:</dt>
+                <dd>From now on, whenever you generate code that spans more than one file, generate a Python script that can be run to automatically create the specified files or make changes to existing files to insert the generated code.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>The automation artifact must be defined concretely. Without a concrete meaning for how to "automate" the steps, the LLM often states that it "cannot automate things" since that is beyond its capabilities.<br>
+                One caveat of the Output Automater pattern is the LLM needs sufficient conversational context to generate an automation artifact that is functional in the target context.<br>
+                The Output Automater pattern is best employed by users who can read and understand the generated automation artifact. LLMs can (and do) produce inaccuracies in their output, so blindly accepting and executing an automation artifact carries significant risk. Although this pattern may alleviate the user from performing certain manual steps, it does not alleviate their responsibility to understand the actions they undertake using the output.
+            </dd>
         </dl>
     </section>
 
