@@ -86,7 +86,7 @@
             <tbody>
                 <tr>
                     <td>Input Semantics</td>
-                    <td>Meta Language Creation</td>
+                    <td><a href="#meta-language-creation-pattern">Meta Language Creation</a></td>
                     <td>They deal with how an LLM understands the input and how it translates the input into something it can use to generate output.</td>
                 </tr>
                 <tr>
@@ -150,12 +150,41 @@
         </ol>
     </section>
 
-    <section id="assumption-test">
-        <h2>Assumption Test</h2>
+    <section id="meta-language-creation-pattern">
+        <h2>The Meta Language Creation Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>During a conversation with an LLM, the user would like to create the prompt via an alternate language. The intent of this pattern is to explain the semantics of this alternative language to the LLM so the user can write future prompts using this new language and its semantics.</dd>
+            <dt>Motivation:</dt>
+                <dd>Many problems, structures, or other ideas communicated in a prompt may be more concisely, unam- biguously, or clearly expressed in a language other than English.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd>
+                    <blockquote>When I say X, I mean Y (or would like you to do Y)</blockquote>
+                </dd>
+            <dt>Examples:</dt>
+                <dd>From now on, whenever I type two identifiers separated by a &rarr;, I am describing a graph. For example, <code>a &rarr; b</code> is describing a graph with nodes <code>a</code> and <code>b</code> and an edge between them. If I separate identifiers by <code>-[w:2, z:3]&rarr;</code>, I am adding properties of the edge, such as a weight or label.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>
+                    It may create the potential for confusion within the LLM. As important as it is to clearly define the semantics of the language, it is also essential to ensure the language itself introduces no ambiguities that degrade the LLM's performance or accuracy.<br>
+                    Using a single meta-language-per-conversation session may also be a best practice since it avoids the potential for conflicting or unexpected semantics being applied to the conversation over time.
+                </dd>
+        </dl>
     </section>
 
-    <section id="implementation">
-        <h2>Implementation</h2>
+    <section id="XXX-pattern">
+        <h2>The XXX Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd></dd>
+            <dt>Motivation:</dt>
+                <dd></dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd></dd>
+            <dt>Examples:</dt>
+                <dd></dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd></dd>
+        </dl>
     </section>
 
     <section id="release-criteria-test">
