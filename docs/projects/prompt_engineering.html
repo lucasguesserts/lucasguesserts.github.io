@@ -34,7 +34,7 @@
     <section id="motivation">
         <h2>Motivation</h2>
 
-        <p>Everybody is talking about AI, vibe-coding, coding AI, bla bla bla. Although I don't see the extraordinary evidence to support that, I still think AI - talking to a chatbot - has its use.</p>
+        <p>Everybody is talking about AI, vibe-coding, coding AI, bla bla bla. Although I don't see the extraordinary evidence to support to AI taking over the world (in every imaginable sense), I still think AI - talking to a chatbot - has its use.</p>
 
         <blockquote>
             <p>Extraordinary claims require extraordinary evidence - Carl Sagan.</p>
@@ -142,7 +142,7 @@
         <p>Prompt patterns are presented as <em>fundamental contextual statements</em>: written descriptions of the important ideas to communicate in a prompt to an LLM. They are presented with the following information:</p>
         <ol>
             <li>name and classification;</li>
-            <li>intent and context ;</li>
+            <li>intent and context;</li>
             <li>motivation;</li>
             <li>structure and key ideas;</li>
             <li>examples;</li>
@@ -158,7 +158,7 @@
             <dt>Motivation:</dt>
                 <dd>Many problems, structures, or other ideas communicated in a prompt may be more concisely, unam- biguously, or clearly expressed in a language other than English.</dd>
             <dt>Structure and Key Ideas:</dt>
-                <dd>When I say X, I mean Y (or would like you to do Y)</dd>
+                <dd><strong>When I say &lt;X&gt;, I mean &lt;Y&gt;.</strong></dd>
             <dt>Examples:</dt>
                 <dd>From now on, whenever I type two identifiers separated by a &rarr;, I am describing a graph. For example, <code>a &rarr; b</code> is describing a graph with nodes <code>a</code> and <code>b</code> and an edge between them. If I separate identifiers by <code>-[w:2, z:3]&rarr;</code>, I am adding properties of the edge, such as a weight or label.</dd>
             <dt>Consequences (pros and cons):</dt>
@@ -178,7 +178,8 @@
                 <dd>The output of an LLM is often a sequence of steps for the user to follow. However, having users continually perform the manual steps dictated by LLM output is tedious and error-prone.</dd>
             <dt>Structure and Key Ideas:</dt>
                 <dd>
-                    Whenever you produce an output that has at least one step to take and the following properties (alternatively, always do this) X<br>Produce an executable artifact of type Y that will automate these steps
+                    <strong>Whenever you produce an output that has at least one step to take and &lt;the following properties X&gt;.<br>
+                    Produce &lt;an executable artifact of type Y&gt; that will automate these steps.</strong>
                 </dd>
             <dt>Examples:</dt>
                 <dd>From now on, whenever you generate code that spans more than one file, generate a Python script that can be run to automatically create the specified files or make changes to existing files to insert the generated code.</dd>
@@ -186,6 +187,28 @@
                 <dd>The automation artifact must be defined concretely. Without a concrete meaning for how to "automate" the steps, the LLM often states that it "cannot automate things" since that is beyond its capabilities.<br>
                 One caveat of the Output Automater pattern is the LLM needs sufficient conversational context to generate an automation artifact that is functional in the target context.<br>
                 The Output Automater pattern is best employed by users who can read and understand the generated automation artifact. LLMs can (and do) produce inaccuracies in their output, so blindly accepting and executing an automation artifact carries significant risk. Although this pattern may alleviate the user from performing certain manual steps, it does not alleviate their responsibility to understand the actions they undertake using the output.
+            </dd>
+        </dl>
+    </section>
+
+    <section id="flipped-interaction-pattern">
+        <h2>The Flipped Interaction Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>You want the LLM to ask questions to obtain the information it needs to perform some tasks;</dd>
+            <dt>Motivation:</dt>
+                <dd>Rather than having the user drives a conversation, an LLM often has knowledge it can use to more accurately obtain information from the user;</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>I would like you to ask me questions &lt;to achieve X&gt;.<br>
+                    You should ask questions until &lt;this condition is met&gt;.<br>
+                    [Ask me the questions one at a time].</strong></dd>
+            <dt>Examples:</dt>
+                <dd>From now on, I would like you to ask me questions to deploy a Python application to AWS. When you have enough information to deploy the application, create a Python script to automate the deployment.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>
+                    One consideration when designing the prompt is how much to dictate to the LLM regarding what information to collect prior to termination. Making an open-ended question allows the LLM to dictate more the outcome, whereas a more specific one directs it better.<br>
+                    If specific requirements are known in advance, it is better to inject them into the prompt rather than hoping the LLM will obtain the needed information. Again, if not specified, the LLM will decide if it will prompt the user or simply make an educated guess.<br>
+                    When developing prompts for flipped interactions, consider the level of user knowledge, engagement, and control. Specify who makes the key decisions, the number of interactions, and the level of experience of the user.
             </dd>
         </dl>
     </section>
@@ -206,12 +229,11 @@
         </dl>
     </section>
 
-    <section id="release-criteria-test">
-        <h2>Release Criteria: Test</h2>
-    </section>
-
-    <section id="solved">
-        <h2>Solved</h2>
+    <section id="side-effects">
+        <h2>Side Effects</h2>
+        <p>I have the feeling that those are not patters only for LLMs but for human interaction too. I mean, I could easily use some of those techniques with my interactions with other people. The <em>flipped interaction patter</em>, for instance, I can use when talking to an expert so I can provide a basic context and I let they drive the conversation. I can also use myself, when people start telling me something and I switch to asking clarifying questions.</p>
+        <p>I have looked for references on how to make good questions (I was interested in scientific research) but I couldn't find much about the topic. The way I see now, I could use some techniques of <em>Prompt Engineering</em> to do just that.</p>
+        <p>There is another aspect, which is talking to people. Things like "always provide enough context" seem reasonable also when talking to humans. We always assume people know some things (those basic things no one can agree on what is), but seldom is the case in which the other person really has the context we want them to have to talk/answer us.</p>
     </section>
 </main>
 
