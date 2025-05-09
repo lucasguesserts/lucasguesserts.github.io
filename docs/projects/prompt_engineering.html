@@ -275,6 +275,33 @@
         </dl>
     </section>
 
+    <section id="cognitive-verifier-pattern">
+        <h2>The Cognitive Verifier Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>LLMs can often reason better if a question is subdivided into additional questions that provide answers combined into the overall answer to the original question. The intent of the pattern is to force the LLM to always subdivide questions into additional questions that can be used to provide a better answer to the original question.</dd>
+            <dt>Motivation:</dt>
+                <dd>
+                    (1) Humans may initially ask questions that are too high-level to provide a concrete answer to without additional follow-up due to unfamiliarity with the domain, laziness in prompt entry, or being unsure about what the correct
+                    phrasing of the question should be.<br>
+                    (2) Research has demonstrated that LLMs can often perform better when using a question that is subdivided into individual questions.
+                </dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    When you are asked a question, follow these rules:<br>
+                    Generate a number of additional questions that would help more accurately answer the question;<br>
+                    Combine the answers to the individual questions to produce the final answer to the overall question;
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>When I ask you a question, generate three additional questions that would help you give a more accurate answer. When I have answered the three questions, combine the answers to produce the final answers to my original question.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>
+                    The LLM may go a different way, not the intended one (you let it decide the smaller questions). Nevertheless, you can always correct the LLM or provide further context.<br>
+                    A pro of specifying an exact number of questions is that it can tightly scope the amount of additional information the user is forced to provide so it is within a range they are willing and able to contribute. A con, however, is that given N questions there may be an invaluable N + 1 question that will always be scoped out.
+                </dd>
+        </dl>
+    </section>
+
     <section id="XXX-pattern">
         <h2>The XXX Pattern</h2>
         <dl>
