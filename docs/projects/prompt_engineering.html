@@ -385,6 +385,29 @@
         </dl>
     </section>
 
+    <section id="game-play-pattern">
+        <h2>The Game Play Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>Create a game around a given topic. The game is centered around a specific topic and the LLM will guide the game play.</dd>
+            <dt>Motivation:</dt>
+                <dd>You would like the LLM to generate scenarios or questions revolving around a specific topic and require users to apply problem solving or other skills to accomplish a task related to the scenario.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    Create a game for me &lt;around X&gt;<br>
+                    &lt;One or more fundamental rules of the game.&gt;
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>We are going to play a cybersecurity game. You are going to pretend to be a Linux terminal for a computer that has been compromised by an attacker. When I type in a command, you are going to output the corresponding text that the Linux terminal would produce. I am going to use commands to try and figure out how the system was compromised. The attack should have done one or more of the following things: (1) launched new processes, (2) changed files, (3) opened new ports to receive communication, (4) created new outbound connections, (5) changed passwords, (6) created new user accounts, or (7) read and stolen information. To start the game, print a scenario of what happened that led to my investigation and make the description have clues that I can use to get started.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>
+                    The pattern is particularly effective when the rules of the game are relatively limited in scope, but the content for the game is expected to be wide in scope.<br>
+                    The more specific the topic, typically the more novel and interesting the game play.<br>
+                    It is important that the rules fit within the capabilities of the LLM. Textual games that rely on input and output text sequences work best.<br>
+                </dd>
+        </dl>
+    </section>
+
     <section id="XXX-pattern">
         <h2>The XXX Pattern</h2>
         <dl>
