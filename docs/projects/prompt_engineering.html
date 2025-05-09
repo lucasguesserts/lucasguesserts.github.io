@@ -349,6 +349,26 @@
         </dl>
     </section>
 
+    <section id="infinite-generation-pattern">
+        <h2>The Infinite Generation Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>Limit how much text the user must type to produce the next output, based on the assumption that the user does not want to continually reintroduce the prompt.</dd>
+            <dt>Motivation:</dt>
+                <dd>Many tasks require repetitive application of the same prompt to multiple concepts.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    I would like you to generate output forever, [X output(s) at a time].<br>
+                    [Here is how to use the input I provide between outputs.]<br>
+                    [Stop when I ask you to.]
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>From now on, I want you to generate a name and job until I say stop. I am going to provide a template for your output. Everything in all caps is a placeholder. Any time that you generate text, try to fit it into one of the placeholders that I list. Please preserve the formatting and overall template that I provide: <code>https://myapi.com/NAME/profile/JOB</code>.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>As additional outputs are generated, the context surrounding the prompt may fade, leading to the model deviating from the intended behavior. Another issue to consider is that the LLM may generate repetitive outputs, which may not be desired since users find this repetition tedious and error-prone to process.</dd>
+        </dl>
+    </section>
+
     <section id="XXX-pattern">
         <h2>The XXX Pattern</h2>
         <dl>
