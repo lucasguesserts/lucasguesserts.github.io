@@ -302,6 +302,31 @@
         </dl>
     </section>
 
+    <section id="fact-check-list-pattern">
+        <h2>The Fact Check List Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>Ensure that the LLM outputs a list of facts that are present in the output and form an important part of the statements in the output.</dd>
+            <dt>Motivation:</dt>
+                <dd>A current weakness of LLMs is they often rapidly (and even enthusiastically!) generate convincing text that is factually incorrect.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    Generate a set of facts that are contained in the output.<br>
+                    The set of facts should be inserted in a specific point in the output.<br>
+                    The set of facts should be the fundamental facts that could undermine the veracity of the output if any of them are incorrect.
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>From now on, when you generate an answer, create a set of facts that the answer depends on that should be fact-checked and list this set of facts at the end of your output. Only include facts related to cybersecurity.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>
+                    The Fact Check List pattern should be employed whenever users are not experts in the domain for which they are generating output.<br>
+                    Users can inherently check it against the output. In particular, users can directly compare the fact check list to the output to verify the facts listed in the fact check list actually appear in the output.<br>
+                    Users can also identify any omissions from the list.<br>
+                    One caveat of the Fact Check List pattern is that it only applies when the output type is amenable to fact-checking.
+                </dd>
+        </dl>
+    </section>
+
     <section id="XXX-pattern">
         <h2>The XXX Pattern</h2>
         <dl>
