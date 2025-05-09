@@ -451,6 +451,30 @@
         </dl>
     </section>
 
+    <section id="context-manager-pattern">
+        <h2>The Context Manager Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>The intent of this pattern is to enable users to specify or remove context for a conversation with an LLM. The goal is to focus the conversation on specific topics or exclude unrelated topics from consideration. This pattern gives users greater control over what statements the LLM considers or ignores when generating output.</dd>
+            <dt>Motivation:</dt>
+                <dd>LLMs often struggle to interpret the intended context of the current question or generate irrelevant responses based on prior inputs or irrelevant attention on the wrong statements. By focusing on explicit contextual statements or removing irrelevant statements, users can help the LLM better understand the question and generate more accurate responses.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    Within &lt;scope X&gt;<br>
+                    Please &lt;consider Y&gt;<br>
+                    Please &lt;ignore Z&gt;<br>
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>When analyzing the following pieces of code, only consider security aspects.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>
+                    The more explicit the statements are, the more likely the LLM will take appropriate action.<br>
+                    Clarity and specificity are important when providing or removing context to/from an LLM so it can better understand the intended scope of the conversation and generate more relevant responses.<br>
+                    It may inadvertently wipe out patterns applied to the conversation that the user is unaware of.
+                </dd>
+        </dl>
+    </section>
+
     <section id="XXX-pattern">
         <h2>The XXX Pattern</h2>
         <dl>
