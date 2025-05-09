@@ -408,6 +408,28 @@
         </dl>
     </section>
 
+    <section id="reflection-pattern">
+        <h2>The Reflection Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>The goal of this pattern is to ask the model to automatically explain the rationale behind given answers.</dd>
+            <dt>Motivation:</dt>
+                <dd>LLMs do make mistakes. By asking LLM to automatically explain the rationale behind its answers, users can gain a better understanding of how the model is processing the input, what assumptions it is making, and what data it is drawing on.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    Whenever you generate an answer, explain the reasoning and assumptions behind your answer [so that I can improve my question].
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>When you provide an answer, please explain the reasoning and assumptions behind your selection of software frameworks. If possible, use specific examples or evidence with associated code samples to support your answer of why the framework is the best selection for the task. Moreover, please address any potential ambiguities or limitations in your answer, in order to provide a more complete and accurate response.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>
+                    Reflection can clarify any pointsof confusion, uncover underlying assumptions, and reveal gaps in knowledge or understanding.<br>
+                    The pattern allows users to better assess the output's validity, as well as inform users how an LLM arrived at a particular answer.<br>
+                    The pattern may not be effective for users who do not understand the topic area of the discussion.
+            </dd>
+        </dl>
+    </section>
+
     <section id="XXX-pattern">
         <h2>The XXX Pattern</h2>
         <dl>
