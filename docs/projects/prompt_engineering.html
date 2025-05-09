@@ -327,6 +327,28 @@
         </dl>
     </section>
 
+    <section id="template-pattern">
+        <h2>The Template Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>Ensure an LLM's output follows a precise template in terms of structure.</dd>
+            <dt>Motivation:</dt>
+                <dd>In some cases, output must be produced in a precise format.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    I am going to provide a template for your output.<br>
+                    [X is my placeholder for content.]<br>
+                    Try to fit the output into one or more of the placeholders that I list.<br>
+                    Please preserve the formatting and overall template that I provide.<br>
+                    This is the template: &lt;PATTERN with PLACEHOLDERS&gt;.
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>I am going to provide a template for your output. Everything in all caps is a placeholder. Any time that you generate text, try to fit it into one of the placeholders that I list. Please preserve the formatting and overall template that I provide at <code>https://myapi.com/NAME/profile/JOB</code>.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>One consequence of applying the Template pattern is that it filters the LLM's output, which may eliminate other outputs the LLM would have provided that might be useful to the user. In many cases, the LLM can provide helpful descriptions of code, decision making, or other details that this pattern will effectively eliminate from the output. Users should therefore weight the pros/cons of filtering out this additional information.</dd>
+        </dl>
+    </section>
+
     <section id="XXX-pattern">
         <h2>The XXX Pattern</h2>
         <dl>
