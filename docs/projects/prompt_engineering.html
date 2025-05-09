@@ -222,13 +222,36 @@
                 <dd>Users may not know what types of outputs or details are important for an LLM to focus on to achieve a given task. They may know, however, the role or type of person that they would normally ask to get help with these things.</dd>
             <dt>Structure and Key Ideas:</dt>
                 <dd><strong>
-                    Act as persona X.<br>
-                    Provide outputs that persona X would create.
+                    Act as &lt;persona X&gt;.<br>
+                    Provide outputs &lt;that persona X would create&gt;.
                 </strong></dd>
             <dt>Examples:</dt>
                 <dd>From now on, act as a security reviewer. Pay close attention to the security details of any code that we look at. Provide outputs that a security reviewer would regarding the code.</dd>
             <dt>Consequences (pros and cons):</dt>
                 <dd>the LLM may make interesting assumptions or "hallucinations" regarding the context, the persona knownledge, or the output.</dd>
+        </dl>
+    </section>
+
+    <section id="question-refinement-pattern">
+        <h2>The Question Refinement Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>Ensure the conversational LLM always suggests potentially better or more refined questions the user could ask instead of their original question.</dd>
+            <dt>Motivation:</dt>
+                <dd>If a user is asking a question, it is possible they are not an expert in the domain and may not know the best way to phrase the question or be aware of additional information helpful in phrasing the question. LLMs will often state limitations on the answer they are providing or request additional information to help them produce a more accurate answer.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    [Within scope X], suggest a better version of the question to use instead.<br>
+                    [Prompt me if I would like to use the better version instead.]
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>From now on, whenever I ask a question about a software artifact's security, suggest a better version of the question to use that incorporates information specific to security risks in the language or framework that I am using instead and ask me if I would like to use your question instead.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>
+                    The Question Refinement pattern helps bridge the gap between the user's knowledge and the LLM's understanding, thereby yielding more efficient and accurate interactions. One risk of this pattern is its tendency to rapidly narrow the questioning by the user into a specific area that guides the user down a more limited path of inquiry than necessary. The consequence of this narrowing is that the user may miss important "bigger picture" information. One solution to this problem is to provide additional scope to the pattern prompt, such as "do not scope my questions to specific programming languages or frameworks."<br>
+                    this pattern can be combined with the Cognitive Verifier pattern so the LLM automatically produces a series of follow-up questions that can produce the refined question.<br>
+                    The pattern allows an LLM to generate new questions using its knowledge, the LLM may introduce unfamiliar terms or concepts to the user into the question. One way to address this issue is to include a statement that the LLM should explain any unfamiliar terms it introduces into the question.
+                </dd>
         </dl>
     </section>
 
