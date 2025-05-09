@@ -255,6 +255,26 @@
         </dl>
     </section>
 
+    <section id="alternative-approaches-pattern">
+        <h2>The Alternative Approaches Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>The intent of the pattern is to ensure an LLM always offers alternative ways of accomplishing a task so a user does not pursue only the approaches with which they are familiar.</dd>
+            <dt>Motivation:</dt>
+                <dd>Humans often suffer from cognitive biases that lead them to choose a particular approach to solve a problem even when it is not the right or "best" approach. Moreover, humans may be unaware of alternative approaches to what they have used in the past.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    [Within scope X], if there are alternative ways to accomplish the same thing, list the best alternate approaches.<br>
+                    [Compare/contrast the pros and cons of each approach.]<br>
+                    [Include the original way that I asked and prompt me for which approach I would like to use.]
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>Whenever I ask you to deploy an application to a specific cloud service, if there are alternative services to accomplish the same thing with the same cloud service provider, list the best alternative services and then compare/contrast the pros and cons of each approach with respect to cost, availability, and maintenance effort and include the original way that I asked. Then ask me which approach I would like to proceed with.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>The Alternative Approaches pattern can also be used to incentivize users to select one of an approved set of approaches while informing them of the pros/cons of the approved options.</dd>
+        </dl>
+    </section>
+
     <section id="XXX-pattern">
         <h2>The XXX Pattern</h2>
         <dl>
