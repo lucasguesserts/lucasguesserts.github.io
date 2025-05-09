@@ -369,6 +369,22 @@
         </dl>
     </section>
 
+    <section id="visualization-generator-pattern">
+        <h2>The Visualization Generator Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>Use text generation to create visualizations.</dd>
+            <dt>Motivation:</dt>
+                <dd>LLMs produce text and cannot produce imagery. The pattern overcomes this limitation by generating textual inputs in the correct format to plug into another tool that generates visualizations.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>Generate &lt;an X&gt; that I can provide &lt;to tool Y&gt; to visualize it.</strong></dd>
+            <dt>Examples:</dt>
+                <dd>Whenever I ask you to visualize something, please create either a Graphviz Dot file or DALL-E prompt that I can use to create the visualization. Choose the appropriate tools based on what needs to be visualized.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>The pattern creates a target pipeline for the output to render a visualization.</dd>
+        </dl>
+    </section>
+
     <section id="XXX-pattern">
         <h2>The XXX Pattern</h2>
         <dl>
