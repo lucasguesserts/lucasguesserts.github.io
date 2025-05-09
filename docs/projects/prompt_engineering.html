@@ -430,6 +430,27 @@
         </dl>
     </section>
 
+    <section id="refusal-breaker-pattern">
+        <h2>The Refusal Breaker Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>The goal of this pattern is to ask an LLM to automatically help users rephrase a question when it refuses to give an answer.</dd>
+            <dt>Motivation:</dt>
+                <dd>LLMs may sometimes refuse to answer a question, either because they do not have the required knowledge or because the question is phrased in a way that they do not understand.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    Whenever you can't answer a question Explain why you can't answer. Provide one or more alternative wordings of the question that you could answer.
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>Whenever you can't answer a question, explain why and provide one or more alternate wordings of the question that you can't answer so that I can improve my questions.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>
+                    This pattern provides a potential path for misuse (circunvey limitations in the model).<br>
+                    There is no guarantee that users will be able to overcome the refusal.
+                </dd>
+        </dl>
+    </section>
+
     <section id="XXX-pattern">
         <h2>The XXX Pattern</h2>
         <dl>
