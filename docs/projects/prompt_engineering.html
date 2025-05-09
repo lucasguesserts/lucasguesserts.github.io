@@ -475,6 +475,31 @@
         </dl>
     </section>
 
+    <section id="recipe-pattern">
+        <h2>The Recipe Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>This pattern provides constraints to ultimately output a sequence of steps given some partially provided "ingredients" that must be configured in a sequence of steps to achieve a stated goal.</dd>
+            <dt>Motivation:</dt>
+                <dd>Users often want an LLM to analyze a concrete sequence of steps or procedures to achieve a stated outcome. Typically, users generally know - or have an idea of - what the end goal should look like and what "ingredients" belong in the prompt. However, they may not necessarily know the precise ordering of steps to achieve that end goal.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    I would like to &lt;achieve X&gt;.<br>
+                    I know that I need &lt;to perform steps A,B,C&gt;.<br>
+                    Provide a complete sequence of steps for me.<br>
+                    Fill in any missing steps.<br>
+                    Identify any unnecessary steps.
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>I am trying to deploy an application to the cloud. I know that I need to install the necessary dependencies on a virtual machine for my application. I know that I need to sign up for an AWS account. Please provide a complete sequence of steps. Please fill in any missing steps. Please identify any unnecessary steps.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>
+                    One consequence of the recipe pattern is that a user may not always have a well-specified description of what they would like to implement, construct, or design.<br>
+                    This pattern may introduce unwanted bias from the user's initially selected steps so the LLM may try to find a solution that incorporates them, rather than flagging them as unneeded.
+                </dd>
+        </dl>
+    </section>
+
     <section id="XXX-pattern">
         <h2>The XXX Pattern</h2>
         <dl>
