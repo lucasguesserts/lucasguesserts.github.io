@@ -523,6 +523,85 @@
         <p>I have looked for references on how to make good questions (I was interested in scientific research). The best reference is "How to solve it", which provides a series of heuristics. The way I see now, I could use some techniques of <em>Prompt Engineering</em> to do just that.</p>
         <p>There is another aspect, which is talking to people. Things like "always provide enough context" seem reasonable also when talking to humans. We always assume people know some things (those basic things no one can agree on what is), but seldom is the case in which the other person really has the context we want them to have to talk/answer us.</p>
     </section>
+
+    <section id="practical-example">
+        <h2>Practical Example</h2>
+        <dl>
+            <dt><strong>Me (using Persona, Flipped Interaction)</strong></dt>
+            <dd>
+                <p>Act as a PhD professor of computer science specialized in algorithms and data structures. I am asking your assistance on a problem and you are going to help me identify the best solution for it, considering all your knownledge of algorithms.</p>
+                <p>I am designing an algorithm to solve the three dimensional single container loading problem, in which rectangular items must be allocated inside a rectangular container. Items can only be placed orthogonally, meaning their faces are parallel to the respective faces of the container.</p>
+                <p>Specifically now, I am working on generating blocks, which are packings of items used to speed up the allocation process. Blocks have items allocated at certain positions and orientations, and for all purposes, we think of a block as an item to be allocated.</p>
+                <p>For my blocks generation algorithm, I want to identify when two blocks are equivalent. In my definition, two blocks are equivalent when they have the same items and the same measurements. The items do not have to be in the same positions nor orientation within a block.</p>
+                <p>Please, start asking questions, one at a time, until you think you have a good understanding of the problem. Please ask for as much details as you need to understand it and to be able to propose different solutions. Once you are done asking, tell me you are ready to further discussions and prompt me for what I want to do next</p>
+            </dd>
+
+            <dt><strong>AI:</strong></dt>
+            <dd>
+                <p>To fully understand the problem and give you the best possible solution, here are my initial questions:</p>
+                <ol>
+                    <li>Item Representation: How are the items represented? Are they uniquely identifiable (e.g., with an ID or unique properties like dimensions)?</li>
+                    <li>Block Composition: When you say that blocks have the "same items," do you mean strictly the same set of items with identical dimensions, or do you also consider the count of each item type? For example, if you have two blocks, one with two items of type A and one item of type B, and the other with the same configuration but different positioning and orientation, are they considered equivalent?</li>
+                    <li>Orientation Handling: Are all orientations of items within a block considered valid? If an item can be rotated, would two blocks with the same items but different rotations still be considered equivalent?</li>
+                    <li>Sorting or Canonical Form: Have you considered or are you using any canonical representation (e.g., sorting items by size or type) for blocks to simplify the equivalence check?</li>
+                    <li>Current Data Structures: What data structures are you currently using to represent blocks and items? Are you already using spatial data structures, or is it a plain list or vector of items?</li>
+                    <li>Handling of Duplicates: If two identical blocks are generated during your algorithm's execution, are they stored separately, or do you perform deduplication at any stage?</li>
+                </ol>
+                <p>Once I get these answers, I'll be much better positioned to suggest the most optimal approaches. Would you like me to continue with more detailed questions?</p>
+            </dd>
+
+            <dt><strong>Me:</strong></dt>
+            <dd>
+                <ol>
+                    <li>items have measurements x, y, and z, a quantity, and a set of allowed orientations. Any two items that have the same values for all those properties are considered the same item. They do not have IDs</li>
+                    <li>yes, they are considered equivalent, so long the two blocks also have the same measurements</li>
+                    <li>yes, they are considered equivalent, so long the two blocks also have the same measurements</li>
+                    <li>I have not though about a solution for the problem yet.</li>
+                    <li>I have not set any particular implementation, meaning you can propose how to better represent the blocks to accomplish the desired goal</li>
+                    <li>if two equivalent blocks are generated, I keep only the first one seen</li>
+                </ol>
+            </dd>
+
+            <dt><strong>AI:</strong></dt>
+            <dd>
+                <p>Excellent! I now have a clear picture of the problem. I am ready to move forward and discuss potential solutions, optimizations, and trade-offs.</p>
+                <p>Before we proceed, do you want me to:</p>
+                <ol>
+                    <li>Propose different approaches for detecting equivalence, including their time complexity and memory requirements?</li>
+                    <li>Design a data structure to efficiently store and look up generated blocks, facilitating quick equivalence checks?</li>
+                    <li>Analyze trade-offs for different strategies to balance scalability and correctness?</li>
+                </ol>
+                <p>Which one would you like to explore first?</p>
+            </dd>
+
+            <dt><strong>Me (using Alternative Approaches, Fact Check List, Reflection, Context Manager):</strong></dt>
+            <dd>
+                <p>I want you to propose different approaches. For each of them, do the following:</p>
+                <ol>
+                    <li>analyse their time and memory requirements</li>
+                    <li>list all your assumptions, so that I can better understand and later check it</li>
+                    <li>explain the reasoning behind your proposal, that is, why it is interesting</li>
+                    <li>list its strong and weak points</li>
+                </ol>
+                <p>For now, you are going to propose different approaches, but do not compare them with one another, we are going to do it afterwards, when I request.</p>
+            </dd>
+
+            <dt><strong>AI:</strong></dt>
+            <dd>
+                <p>Got it! I will structure the solutions clearly with all the requirements you've listed. I am going to work through different approaches systematically, focusing on correctness, efficiency, and clear reasoning.</p>
+                <p>Here are the approaches I plan to cover:</p>
+                <ol>
+                    <li>Canonical Form Representation</li>
+                    <li>Signature-Based Hashing</li>
+                    <li>Multiset Representation with Spatial Hashing</li>
+                    <li>Spatial Tree (e.g., R-Tree or K-D Tree) for Geometric Matching</li>
+                    <li>Graph Isomorphism Representation</li>
+                </ol>
+                <p>I will start with the Canonical Form Representation and follow the structure you specified. Give me a moment to work through this, and I will present a complete analysis. I will let you know as soon as I am done.</p>
+                <p><em>And it goes on with the details...</em></p>
+            </dd>
+        </dl>
+    </section>
 </main>
 
 <footer>
