@@ -56,6 +56,7 @@
             <li><a href="#alternative-approaches-pattern">The Alternative Approaches Pattern</a></li>
             <li><a href="#cognitive-verifier-pattern">The Cognitive Verifier Pattern</a></li>
             <li><a href="#fact-check-list-pattern">The Fact Check List Pattern</a></li>
+            <li><a href="#chain-of-thought-pattern">The Chain of Though Pattern</a></li>
             <li><a href="#template-pattern">The Template Pattern</a></li>
             <li><a href="#few-shot-examples-pattern">The Few-Shot Examples Pattern</a></li>
             <li><a href="#infinite-generation-pattern">The Infinite Generation Pattern</a></li>
@@ -164,6 +165,7 @@
                         <a href="#question-refinement-pattern">Question Refinement</a><br><br>
                         <a href="#alternative-approaches-pattern">Alternative Approaches</a><br><br>
                         <a href="#cognitive-verifier-pattern">Cognitive Verifier</a><br><br>
+                        <a href="#chain-of-thought-pattern">Chain of Thought</a><br><br>
                         <a href="#refusal-breaker-pattern">Refusal Breaker</a>
                     </td>
                     <td>Specify how the LLM can modify or change the input so to generate better outputs.</td>
@@ -527,6 +529,30 @@
         </dl>
     </section>
 
+    <section id="chain-of-thought-pattern">
+        <h2>The Chain of Though Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>Ask the LLM to follow a chain of though before arriving at a conclusion.</dd>
+            <dt>Motivation:</dt>
+                <dd>Researchers demonstrated that asking the LLM to follow a CoT improves its results significantly. Intuitively, it is more likely that the LLM produces the correct/good answer if it works in small steps, it is more likely to get each step right, and thus to arrive at the answer.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    [One or more example of step by step reasoning for X]<br>
+                    &lt;X&gt;<br>
+                    Let's think step by step.
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>
+                    Q: A juggler can juggle 16 balls. Half of the balls are golf balls, and half of the golf balls are blue. How many blue golf balls are there?<br>
+                    A: Let's think step by step.<br>
+                    (Output) There are 16 balls in total. Half of the balls are golf balls. That means that there are 8 golf balls. Half of the golf balls are blue. That means that there are 4 blue golf balls.
+                </dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>This pattern is specially useful for problems that require a series of steps to be solved (logic, math, programming). It is not that useful for tasks such as "extract the text of an image".</dd>
+        </dl>
+    </section>
+
     <section id="refusal-breaker-pattern">
         <h2>The Refusal Breaker Pattern</h2>
         <dl>
@@ -703,11 +729,21 @@
 
     <section id="references">
         <h2>References</h2>
-        <p>This post based on the Paper <a href="https://arxiv.org/abs/2302.11382">A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT</a> by White et al. (2023) and the <a href="https://www.coursera.org/learn/prompt-engineering/">course "Prompt Engineering for ChatGPT" of professor Jules White</a>.</p>
+        <p>This post is mostly based on the Paper <a href="https://arxiv.org/abs/2302.11382">A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT</a> by White et al. (2023) and the <a href="https://www.coursera.org/learn/prompt-engineering/">course "Prompt Engineering for ChatGPT" of professor Jules White</a>.</p>
 
-        <blockquote>
-            <a href="https://doi.org/10.48550/arXiv.2302.11382">White, J., Fu, Q., Hays, S., Sandborn, M., Olea, C., Gilbert, H., Elnashar, A., Spencer-Smith, J., & Schmidt, D.C. (2023). A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT. ArXiv, abs/2302.11382.</a>
-        </blockquote>
+        <p>Papers:</p>
+        <ul>
+            <li><a href="https://doi.org/10.48550/arXiv.2302.11382">White, J., Fu, Q., Hays, S., Sandborn, M., Olea, C., Gilbert, H., Elnashar, A., Spencer-Smith, J., & Schmidt, D.C. (2023). A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT. ArXiv, abs/2302.11382.</a></li>
+            <li><a href="https://arxiv.org/pdf/2201.11903">Wei, J., Wang, X., Schuurmans, D., Bosma, M., Chi, E.H., Xia, F., Le, Q., & Zhou, D. (2022). Chain of Thought Prompting Elicits Reasoning in Large Language Models. ArXiv, abs/2201.11903.</a></li>
+            <li><a href="https://arxiv.org/pdf/2205.11916">Kojima, T., Gu, S.S., Reid, M., Matsuo, Y., & Iwasawa, Y. (2022). Large Language Models are Zero-Shot Reasoners. ArXiv, abs/2205.11916.</a></li>
+        </ul>
+
+        <p>Other links</p>
+        <ul>
+            <li><a href="https://www.coursera.org/learn/prompt-engineering/">Course "Prompt Engineering for ChatGPT" of professor Jules White</a></li>
+            <li><a href="https://www.promptingguide.ai/">Prompt Engineering Guide</a></li>
+        </ul>
+
     </section>
 </main>
 
