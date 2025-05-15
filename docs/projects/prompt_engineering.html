@@ -57,6 +57,7 @@
             <li><a href="#cognitive-verifier-pattern">The Cognitive Verifier Pattern</a></li>
             <li><a href="#fact-check-list-pattern">The Fact Check List Pattern</a></li>
             <li><a href="#template-pattern">The Template Pattern</a></li>
+            <li><a href="#few-shot-examples-pattern">The Few-Shot Examples Pattern</a></li>
             <li><a href="#infinite-generation-pattern">The Infinite Generation Pattern</a></li>
             <li><a href="#visualization-generator-pattern">The Visualization Generator Pattern</a></li>
             <li><a href="#game-play-pattern">The Game Play Pattern</a></li>
@@ -144,7 +145,8 @@
                         <a href="#audience-persona-pattern">Audience Persona</a><br><br>
                         <a href="#visualization-generator-pattern">Visualization Generator</a><br><br>
                         <a href="#recipe-pattern">Recipe</a><br><br>
-                        <a href="#template-pattern">Template</a>
+                        <a href="#template-pattern">Template</a><br><br>
+                        <a href="#few-shot-examples-pattern">Few-Shot Examples</a>
                     </td>
                     <td>Specify how to generate the output, being it the format, structure, content, theme, goal, ...</td>
                 </tr>
@@ -399,6 +401,48 @@
                 <dd>I am going to provide a template for your output. Everything in all caps is a placeholder. Any time that you generate text, try to fit it into one of the placeholders that I list. Please preserve the formatting and overall template that I provide at <code>https://myapi.com/NAME/profile/JOB</code>.</dd>
             <dt>Consequences (pros and cons):</dt>
                 <dd>One consequence of applying the Template pattern is that it filters the LLM's output, which may eliminate other outputs the LLM would have provided that might be useful to the user. In many cases, the LLM can provide helpful descriptions of code, decision making, or other details that this pattern will effectively eliminate from the output. Users should therefore weight the pros/cons of filtering out this additional information.</dd>
+        </dl>
+    </section>
+
+    <section id="few-shot-examples-pattern">
+        <h2>The Few-Shot Examples Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>Specify the output using a series of examples with a pattern for the LLM to folllow, instead of describing the process it should follow. In other words, we let the LLM learn what to do and how to format the output using the examples.</dd>
+            <dt>Motivation:</dt>
+                <dd>For some cases, it is difficult to explain how to generate the output but it is very easy to give many examples.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    &lt;Input Prefix&gt;: &lt;Input 1&gt;<br>
+                    &lt;Intermediate Step Prefix&gt;: &lt;Intermediate Step Input 1&gt;<br>
+                    &lt;Output Prefix&gt;: &lt;Output 1&gt;<br>
+                    ...<br>
+                    &lt;Input Prefix&gt;: &lt;Input N&gt;<br>
+                    &lt;Intermediate Step Prefix&gt;: &lt;Intermediate Step Input N&gt;<br>
+                    &lt;Output Prefix&gt;: &lt;Output N&gt;
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd><strong>
+                    Situation: I am traveling 60 miles per hour and I see the brake lights on the car in front of me come on<br>
+                    Think: I need to slow the car down before I hit the car in front of me<br>
+                    Action: Press foot on brake<br>
+                    Think: The car isn't going to stop in time<br>
+                    Action: Check if the shoulder is wide enough to swerve into<br>
+                    Think: The shoulder is wide enough<br>
+                    Action: Swerve into shoulder<br>
+                    ...<br>
+                    Situation: I have just entered the highway from an on-ramp and am traveling 30mph<br>
+                    Think: I need to speed up to the speed limit so that I don't get hit from behind<br>
+                    Action: Press foot on accelerator<br>
+                    Think: I have reached the speed limit<br>
+                    Action: Let up on accelerator<br>
+                </strong></dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>
+                    We expect the LLM to be able to identify the same patterns and be able to perform the task with human-level capabilities. Given the limitations of LLMs, that may not be the case though, meaning its output may be imprecise or wrong.<br>
+                    The more examples and the more specific they are, the better. If you give too few examples, the LLM may not be able to correctly identify the pattern to follow. If your prefixes are too generic (do not simply use "input/output), the LLM won't have much context.<br>
+                    Additionally, you can use this pattern to generate more examples (curate them before using).
+                </dd>
         </dl>
     </section>
 
