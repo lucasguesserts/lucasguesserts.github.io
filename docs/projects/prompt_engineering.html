@@ -31,6 +31,13 @@
 <main>
     <h1>Project: Prompt Engineering</h1>
 
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Everybody is talking about AI, vibe-coding, coding AI, bla bla bla. Although I don't see the extraordinary evidence to support to AI taking over the world (in every imaginable sense), I still think AI - talking to a chatbot - has its use.</p>
+        <p>AI is a tool, like any other tool humans have developed. I like to compare it with a calculator. Have calculators made mathematicians, statisticians, or engineers obsolete? Not really, we adapted to use those tools to develop more complex and refined projects. That is what I see happening with AI.</p>
+        <p>As with any other tool, we must learn how to use it properly. To that end, I decided to take the <a href="https://www.coursera.org/learn/prompt-engineering/">course "Prompt Engineering for ChatGPT" of professor Jules White</a>. Here, I document what I think is important in this area.</p>
+    </section>
+
     <section>
         <h2>Content:</h2>
         <ol>
@@ -44,6 +51,7 @@
             <li><a href="#output-automater-pattern">The Output Automater Pattern</a></li>
             <li><a href="#flipped-interaction-pattern">The Flipped Interaction Pattern</a></li>
             <li><a href="#persona-pattern">The Persona Pattern</a></li>
+            <li><a href="#audience-persona-pattern">The Audience Persona Pattern</a></li>
             <li><a href="#question-refinement-pattern">The Question Refinement Pattern</a></li>
             <li><a href="#alternative-approaches-pattern">The Alternative Approaches Pattern</a></li>
             <li><a href="#cognitive-verifier-pattern">The Cognitive Verifier Pattern</a></li>
@@ -61,13 +69,6 @@
             <li><a href="#observations">Observations</a></li>
             <li><a href="#references">References</a></li>
         </ol>
-    </section>
-
-    <section id="introduction">
-        <h2>Introduction</h2>
-        <p>Everybody is talking about AI, vibe-coding, coding AI, bla bla bla. Although I don't see the extraordinary evidence to support to AI taking over the world (in every imaginable sense), I still think AI - talking to a chatbot - has its use.</p>
-        <p>AI is a tool, like any other tool humans have developed. I like to compare it with a calculator. Have calculators made mathematicians, statisticians, or engineers obsolete? Not really, we adapted to use those tools to develop more complex and refined projects. That is what I see happening with AI.</p>
-        <p>As with any other tool, we must learn how to use it properly. To that end, I decided to take the <a href="https://www.coursera.org/learn/prompt-engineering/">course "Prompt Engineering for ChatGPT" of professor Jules White</a>. Here, I document what I think is important in this area.</p>
     </section>
 
     <section id="mindset">
@@ -140,6 +141,7 @@
                     <td>
                         <a href="#output-automater-pattern">Output Automater</a><br><br>
                         <a href="#persona-pattern">Persona</a><br><br>
+                        <a href="#audience-persona-pattern">Audience Persona</a><br><br>
                         <a href="#visualization-generator-pattern">Visualization Generator</a><br><br>
                         <a href="#recipe-pattern">Recipe</a><br><br>
                         <a href="#template-pattern">Template</a>
@@ -261,6 +263,25 @@
                 <dd>From now on, act as a security reviewer. Pay close attention to the security details of any code that we look at. Provide outputs that a security reviewer would regarding the code.</dd>
             <dt>Consequences (pros and cons):</dt>
                 <dd>the LLM may make interesting assumptions or "hallucinations" regarding the context, the persona knownledge, or the output.</dd>
+        </dl>
+    </section>
+
+    <section id="audience-persona-pattern">
+        <h2>The Audience Persona Pattern</h2>
+        <dl>
+            <dt>Intent and Context:</dt>
+                <dd>users would like to tailor the output for a specific audience. By using an audience persona, the user conveys in a dense way important pieces of information, e.g. the content and level of complexity, for the audience to understand the output.</dd>
+            <dt>Motivation:</dt>
+                <dd>the user (or any other intended audience) may have little knownledge on the topic, so it is best to ask the LLM to generate an output suitable for they. Other times, the user is an expert on the topic, so they can ask the LLM to generate outputs with more details and technical terms.</dd>
+            <dt>Structure and Key Ideas:</dt>
+                <dd><strong>
+                    Explain &lt;X&gt; to me.<br>
+                    Assume that I am &lt;persona X&gt;.
+                </strong></dd>
+            <dt>Examples:</dt>
+                <dd>Explain how the supply chains for grocery stores work to me. Assume that I am Ghengis Khan.</dd>
+            <dt>Consequences (pros and cons):</dt>
+                <dd>We are leveraging the assumptions of the LLM about the given persona. It may make wrong mistakes or go in a direction different than the one intended.</dd>
         </dl>
     </section>
 
