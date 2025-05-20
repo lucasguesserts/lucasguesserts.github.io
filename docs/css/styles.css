@@ -2,6 +2,7 @@
 Color pallete:
 
 - black: #000000;
+- rafaela-white: #EEEEEE
 - davys-gray: #5E5E5E;
 - silver: #C0C0C0;
 - antiflash-white: #EBEBEB;
@@ -139,7 +140,8 @@ nav {
         box-sizing: border-box;
         display: inline-block;
         text-decoration: none;
-        background-color: #5E5E5E;
+        color: #000000;
+        background-color: #EEEEEE;
         padding: 1em;
         text-align: center;
         border-radius: 10px;
@@ -147,6 +149,7 @@ nav {
     }
     a:visited {
         text-decoration: none;
+        color: #000000;
     }
 }
 
