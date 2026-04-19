@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block main_content %} {%- set separator =
+config.extra.separator | default(value="•") -%} {%- set rel_attributes =
+macros_rel_attributes::rel_attributes() | trim -%} {%- set blank_target =
+macros_target_attribute::target_attribute(new_tab=config.markdown.external_links_target_blank)
+-%} {# Get the now section to find other now pages #} {%- set now_section =
+get_section(path="now/_index.md") -%} {%- set now_pages = now_section.pages |
+sort(attribute="date") | reverse -%} {# Find current page index for display
+purposes #} {%- set current_index = 0 -%} {%- for p in now_pages -%} {%- if
+p.path == page.path -%} {%- set_global current_index = loop.index0 -%} {%- endif
+-%} {%- endfor -%} {# Use the formatted date as the page title #} {%- set
+page_title = macros_format_date::format_date(date=page.date, short=false,
+language_strings=language_strings) -%} {{
+macros_page_header::page_header(title=page_title) }}
+
+<div id="page-content">
+  <main>
+    {# Check if this is an old now page (not the latest) #} {%- set latest_page
+    = now_pages | first -%} {%- if page.path != latest_page.path -%} {%- set
+    now_url = get_url(path="now") | safe -%}
+    <div class="admonition warning">
+      <div class="admonition-icon admonition-icon-warning"></div>
+      <div class="admonition-content">
+        <strong class="admonition-title"
+          >{{ macros_translate::translate(key="now_page_old_warning",
+          default="This is an old now page", language_strings=language_strings)
+          }}</strong
+        >
+        {%- if lang == "pt" -%}
+        <p>
+          Esta página mostra o que eu estava focado no passado. Confira
+          <a href="{{ now_url }}">a página now mais recente</a> para ver no que
+          estou trabalhando atualmente.
+        </p>
+        {%- else -%}
+        <p>
+          This page shows what I was focused on in the past. Check out
+          <a href="{{ now_url }}">the latest now page</a> to see what I am
+          currently up to.
+        </p>
+        {%- endif -%}
+      </div>
+    </div>
+    {%- else -%} {# Add the now page explanation admonition for the latest page
+    #}
+    <div class="admonition info">
+      <div class="admonition-icon admonition-icon-info"></div>
+      <div class="admonition-content">
+        <strong class="admonition-title"
+          >{{ macros_translate::translate(key="now_page_what_is_this",
+          default="What is this?", language_strings=language_strings) }}</strong
+        >
+        {%- if lang == "pt" -%}
+        <p>
+          Esta é uma página <code>/now</code>, inspirada no movimento
+          <a href="https://nownownow.com/about">NowNowNow</a>. O objetivo é
+          compartilhar meu status atual, atividades e projetos.
+        </p>
+        {%- else -%}
+        <p>
+          This is a <code>/now</code> page, inspired by the
+          <a href="https://nownownow.com/about">NowNowNow</a> movement. The goal
+          is to share my current status, activities and projects.
+        </p>
+        {%- endif -%}
+      </div>
+    </div>
+    {%- endif -%} {# The replace pattern is used to enable arbitrary locations
+    for the Table of Contents #} {# This is Philipp Oppermann's workaround:
+    https://github.com/getzola/zola/issues/584#issuecomment-474329637 #} {{
+    page.content | replace(from="<!-- toc -->", to=macros_toc::toc(page=page,
+    header=false, language_strings=language_strings)) | safe }}
+  </main>
+</div>
+
+{%- include "partials/extra_features.html" -%} {% endblock main_content %}

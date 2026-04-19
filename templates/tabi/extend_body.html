@@ -1,0 +1,10 @@
+{# Language toggle button extension for quick navigation #} {# Load external
+JavaScript and CSS files to avoid CSP issues #}
+<script
+  defer
+  src="{{ get_url(path='js/language-toggle.js', trailing_slash=false) | safe }}"
+></script>
+<link
+  rel="stylesheet"
+  href="{{ get_url(path='css/language-toggle.css', trailing_slash=false) | safe }}"
+/>

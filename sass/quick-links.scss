@@ -1,0 +1,103 @@
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.quick-link-card {
+    position: relative;
+    display: block;
+    border: 1px solid var(--divider-color);
+    border-radius: 1rem;
+    background: var(--bg-2);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 1px 2px 0px;
+    overflow: hidden;
+
+    &:hover {
+        background-color: var(--primary-color);
+        color: var(--hover-color);
+        transform: translateY(-4px);
+        box-shadow: rgba(50, 50, 93, 0.4) 0px 6px 12px -2px, rgba(0, 0, 0, 0.4) 0px 3px 7px -3px;
+
+        .quick-link-title {
+            color: var(--hover-color);
+        }
+
+        .quick-link-description {
+            color: var(--hover-color);
+            opacity: 0.9;
+        }
+
+        .quick-link-icon {
+            transform: scale(1.1);
+        }
+    }
+
+    // Remove the default link hover behavior for these cards
+    &:hover::before {
+        display: none;
+    }
+}
+
+.quick-link-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 0 0.75rem 0;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.quick-link-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.quick-link-description {
+    margin: 0 !important;
+    font-size: 0.8rem !important;
+    font-weight: 300 !important;
+    color: var(--text-color);
+    opacity: 0.75;
+    line-height: 1.4 !important;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+// Mobile responsiveness
+@media all and (max-width: 720px) {
+    .quick-links-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .quick-link-card {
+        padding: 1.25rem;
+    }
+
+    .quick-link-title {
+        font-size: 0.95rem !important;
+    }
+
+    .quick-link-icon {
+        font-size: 1.3rem;
+    }
+}
+
+// Dark theme adjustments
+[data-theme='dark'] {
+    .quick-link-card {
+        border-color: var(--divider-color);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 12px -2px, rgba(0, 0, 0, 0.15) 0px 3px 7px -3px;
+        }
+    }
+}
