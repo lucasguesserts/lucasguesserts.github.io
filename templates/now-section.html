@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block main_content %} {%- set separator =
+config.extra.separator | default(value="•") -%} {# Get the latest now page #}
+{%- set now_pages = section.pages | sort(attribute="date") | reverse -%} {%- set
+latest_page = now_pages | first -%} {{
+macros_page_header::page_header(title="Now") }} {# Show latest page content if
+available #} {%- if latest_page -%} {# Add the now page explanation admonition
+#}
+<div class="admonition info">
+  <div class="admonition-icon admonition-icon-info"></div>
+  <div class="admonition-content">
+    <strong class="admonition-title"
+      >{{ macros_translate::translate(key="now_page_what_is_this", default="What
+      is this?", language_strings=language_strings) }}</strong
+    >
+    {%- if lang == "pt" -%}
+    <p>
+      Esta é uma página <code>/now</code>, inspirada no movimento
+      <a href="https://nownownow.com/about">NowNowNow</a>. O objetivo é
+      compartilhar meu status atual, atividades e projetos.
+    </p>
+    {%- else -%}
+    <p>
+      This is a <code>/now</code> page, inspired by the
+      <a href="https://nownownow.com/about">NowNowNow</a> movement. The goal is
+      to share my current status, activities and projects.
+    </p>
+    {%- endif -%}
+  </div>
+</div>
+
+{# Display the date of the latest now page #}
+<h2 class="now-page-date-header">
+  <time datetime="{{ latest_page.date }}">
+    {{ macros_format_date::format_date(date=latest_page.date, short=false,
+    language_strings=language_strings) }}
+  </time>
+</h2>
+
+{# Display the latest now page content #}
+<div id="latest-now-content">{{ latest_page.content | safe }}</div>
+
+{# List all now pages #} {%- if now_pages | length > 1 -%}
+<section id="previous-now-pages" class="all-now-pages">
+  <h2>Previous Now Pages</h2>
+  Browse through my previous now pages to see how my focus has evolved over
+  time:
+  <ul class="now-pages-list">
+    {%- for now_page in now_pages -%} {%- if not loop.first -%}
+    <li>
+      <a href="{{ now_page.permalink | safe }}">
+        <time datetime="{{ now_page.date }}">
+          {{ macros_format_date::format_date(date=now_page.date, short=false,
+          language_strings=language_strings) }}
+        </time>
+      </a>
+    </li>
+    {%- endif -%} {%- endfor -%}
+  </ul>
+</section>
+{%- endif -%} {%- else -%}
+<div id="page-content">
+  <main>
+    <p>
+      No now pages found. This is where I'll share what I'm currently focused
+      on.
+    </p>
+  </main>
+</div>
+{%- endif -%} {%- include "partials/extra_features.html" -%} {% endblock
+main_content %}
