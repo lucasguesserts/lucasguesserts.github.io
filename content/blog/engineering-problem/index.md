@@ -1,5 +1,5 @@
 +++
-title = "Some reflections on what it means to be an engineer"
+title = "Reflections on what it means to be an Engineer"
 date = 2026-04-30
 updated = 2026-04-30
 description = ""
