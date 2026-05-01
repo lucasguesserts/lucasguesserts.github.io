@@ -9,12 +9,8 @@ theme = "tabi"
 
 build_search_index = true
 
-taxonomies = [
-    { name = "tags", paginate_by = 5 },
-]
-
 compile_sass = true
-generate_sitemap = true
+generate_sitemap = false
 generate_robots_txt = true
 
 default_language = "en"
@@ -23,25 +19,17 @@ default_language = "en"
 title = "/home/lucasguesser"
 description = "Website pessoal de Lucas Guesser"
 build_search_index = true
-taxonomies = [
-    { name = "tags", paginate_by = 5 },
-]
 
 [markdown]
 bottom_footnotes = true
 external_links_class = "external"
 
-[link_checker]
-skip_prefixes = [
-    "https://www.linkedin.com/in/lucasguesserts/",
-]
-
 [extra]
 show_selected_language_code_in_language_switcher = true
 
 use_cdn = true
-comment = true
-iine = true
+comment = false
+iine = false
 
 # See https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards
 # Path to the fallback image for social media cards (the preview image shown when sharing a link on WhatsApp, LinkedIn…).
@@ -61,9 +49,9 @@ skin = "blue"
 # Website source code
 remote_repository_url = "https://github.com/lucasguesserts/lucasguesserts.github.io"
 remote_repository_git_platform = "auto"
-remote_repository_branch = "main"
-show_remote_changes = true
-show_remote_source = true
+remote_repository_branch = "trunk"
+show_remote_changes = false
+show_remote_source = false
 
 # ===============================
 # Navigation
@@ -72,15 +60,13 @@ show_remote_source = true
 menu = [
     { name = "home", url = "/", trailing_slash = false },
     { name = "blog", url = "blog", trailing_slash = true },
-    { name = "tags", url = "tags", trailing_slash = true },
     { name = "projects", url = "projects", trailing_slash = true },
-    { name = "now", url = "now", trailing_slash = true },
     { name = "about", url = "about", trailing_slash = true },
 ]
 quick_navigation_buttons = true
 toc = true
-show_previous_next_article_links = true
-invert_previous_next_article_links = true
+show_previous_next_article_links = false
+invert_previous_next_article_links = false
 
 # ===============================
 # Usability
@@ -102,16 +88,16 @@ socials = [
 footer_menu = [
     # { url = "about", name = "about", trailing_slash = true },
     # { url = "privacy", name = "privacy", trailing_slash = true },
-    { url = "sitemap.xml", name = "Sitemap", trailing_slash = false },
     # { url = "https://example.com", name = "external link", trailing_slash = true },
 ]
-copyright = "© $CURRENT_YEAR $AUTHOR $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
-copyright_translations.pt = "© $CURRENT_YEAR $AUTHOR $SEPARATOR A menos que se indique o contrário, o conteúdo deste site está disponível sob a licença [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
+copyright = "© $CURRENT_YEAR $AUTHOR $SEPARATOR [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
+copyright_translations.pt = "© $CURRENT_YEAR $AUTHOR $SEPARATOR [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
 
 # ===============================
 # Metadata
 # https://welpo.github.io/tabi/blog/mastering-tabi-settings/#metadata
 # ===============================
 show_author = true
-show_reading_time = true
+show_reading_time = false
 show_date = true
+

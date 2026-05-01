@@ -1,15 +1,8 @@
 +++
-title = "Some reflections on what it means to be an engineer"
+title = "Reflections on what it means to be an Engineer"
 date = 2026-04-30
 updated = 2026-04-30
 description = ""
-
-[taxonomies]
-tags = []
-
-[extra]
-quick_navigation_buttons = false
-toc = false
 +++
 
 Today, I felt a sense of pride in my work! not because I delivered a major feature or solved a critical bug, but because I was intentional about my approach. I was mindful of design choices, trade-offs, and prioritization.

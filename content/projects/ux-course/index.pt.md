@@ -1,10 +1,8 @@
 +++
-title = "3D SCLP"
-description = "A tree search-based heuristic for the three-dimensional single container loading problem (Master's thesis)"
-weight = 2
-
-[taxonomies]
-tags = ["Combinatorial Optimization", "Heuristic", "Open Source"]
+title = "Curso de UX"
+date = 2026-04-30
+updated = 2026-04-30
+description = ""
 
 [extra]
 local_image = "projects/sclp/packing.png"

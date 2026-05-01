@@ -3,8 +3,8 @@ title = "Posts"
 
 [extra]
 header = {title = "Hello there! I'm Lucas,"}
-section_path = "blog/_index.md"
-max_posts = 5
+toc = false
+quick_navigation_buttons = false
 +++
 
 a software engineer based in [Berlin](https://en.wikipedia.org/wiki/Berlin), Germany.
@@ -33,13 +33,6 @@ Here I share thoughts, experiences, and insights about software development, tec
     <h3 class="quick-link-title">
         <span class="quick-link-icon">👋</span>
         About
-    </h3>
-</a>
-
-<a href="/now" class="quick-link-card">
-    <h3 class="quick-link-title">
-        <span class="quick-link-icon">🌱</span>
-        Now
     </h3>
 </a>
 
