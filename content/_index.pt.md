@@ -4,9 +4,11 @@ title = "Posts"
 [extra]
 header = {title = "Oi! Eu sou o Lucas,"}
 section_path = "blog/_index.pt.md"
+quick_navigation_buttons = false
+toc = false
 +++
 
-um engenheiro de software vivendo em [Berlin](https://pt.wikipedia.org/wiki/Berlim), Alemanha.
+um engenheiro de software vivendo em [Berlim](https://pt.wikipedia.org/wiki/Berlim), Alemanha.
 
 Aqui, eu compartilho pensamentos, experiências e ideias sobre desenvolvimento de software, tecnologia, e a vida em geral.
 

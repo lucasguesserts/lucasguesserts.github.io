@@ -4,6 +4,8 @@ title = "Posts"
 [extra]
 header = {title = "Hello there! I'm Lucas,"}
 section_path = "blog/_index.md"
+quick_navigation_buttons = false
+toc = false
 +++
 
 a software engineer based in [Berlin](https://en.wikipedia.org/wiki/Berlin), Germany.
