@@ -3,8 +3,8 @@ title = "Posts"
 
 [extra]
 header = {title = "Oi! Eu sou o Lucas,"}
-quick_navigation_buttons = false
 toc = false
+quick_navigation_buttons = false
 +++
 
 um engenheiro de software vivendo em [Berlim](https://pt.wikipedia.org/wiki/Berlim), Alemanha.

@@ -6,6 +6,6 @@ insert_anchor_links = "left"
 paginate_by = 20
 
 [extra]
-show_reading_time = false
+toc = true
 quick_navigation_buttons = true
 +++

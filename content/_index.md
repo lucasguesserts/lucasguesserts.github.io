@@ -3,8 +3,8 @@ title = "Posts"
 
 [extra]
 header = {title = "Hello there! I'm Lucas,"}
-quick_navigation_buttons = false
 toc = false
+quick_navigation_buttons = false
 +++
 
 a software engineer based in [Berlin](https://en.wikipedia.org/wiki/Berlin), Germany.
