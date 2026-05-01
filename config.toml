@@ -9,10 +9,6 @@ theme = "tabi"
 
 build_search_index = true
 
-taxonomies = [
-    { name = "tags", paginate_by = 5 },
-]
-
 compile_sass = true
 generate_sitemap = false
 generate_robots_txt = true
@@ -23,9 +19,6 @@ default_language = "en"
 title = "/home/lucasguesser"
 description = "Website pessoal de Lucas Guesser"
 build_search_index = true
-taxonomies = [
-    { name = "tags", paginate_by = 5 },
-]
 
 [markdown]
 bottom_footnotes = true
@@ -72,7 +65,6 @@ show_remote_source = false
 menu = [
     { name = "home", url = "/", trailing_slash = false },
     { name = "blog", url = "blog", trailing_slash = true },
-    { name = "tags", url = "tags", trailing_slash = true },
     { name = "projects", url = "projects", trailing_slash = true },
     { name = "about", url = "about", trailing_slash = true },
 ]

@@ -3,9 +3,6 @@ title = "UX Design Course"
 description = "My journey learning UX design."
 weight = 2
 
-[taxonomies]
-tags = ["UX", "Course"]
-
 [extra]
 local_image = "projects/ux-course/ux.png"
 +++

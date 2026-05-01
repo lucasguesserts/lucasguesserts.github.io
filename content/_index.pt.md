@@ -4,7 +4,6 @@ title = "Posts"
 [extra]
 header = {title = "Oi! Eu sou o Lucas,"}
 section_path = "blog/_index.pt.md"
-max_posts = 5
 +++
 
 um engenheiro de software vivendo em [Berlin](https://pt.wikipedia.org/wiki/Berlim), Alemanha.

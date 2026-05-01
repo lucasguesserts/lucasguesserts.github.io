@@ -4,9 +4,6 @@ date = 2026-04-30
 updated = 2026-04-30
 description = ""
 
-[taxonomies]
-tags = []
-
 [extra]
 quick_navigation_buttons = false
 toc = false
