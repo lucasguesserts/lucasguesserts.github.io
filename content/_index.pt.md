@@ -3,7 +3,6 @@ title = "Posts"
 
 [extra]
 header = {title = "Oi! Eu sou o Lucas,"}
-section_path = "blog/_index.pt.md"
 quick_navigation_buttons = false
 toc = false
 +++
