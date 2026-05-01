@@ -38,7 +38,7 @@ iine = false
 social_media_card = "images/profile-picture.jpg"
 
 # display both the created and the updated dates
-post_listing_date = "updated"
+post_listing_date = "both"
 
 # Projects
 projects_path = "projects/_index.md"
@@ -99,5 +99,5 @@ copyright_translations.pt = "© $CURRENT_YEAR $AUTHOR $SEPARATOR [CC BY-SA 4.0](
 # ===============================
 show_author = true
 show_reading_time = false
-show_date = false
+show_date = true
 
