@@ -36,11 +36,4 @@ Aqui, eu compartilho pensamentos, experiências e ideias sobre desenvolvimento d
     </h3>
 </a>
 
-<a href="/now" class="quick-link-card">
-    <h3 class="quick-link-title">
-        <span class="quick-link-icon">🌱</span>
-        Agora
-    </h3>
-</a>
-
 </div>
