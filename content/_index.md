@@ -36,11 +36,4 @@ Here I share thoughts, experiences, and insights about software development, tec
     </h3>
 </a>
 
-<a href="/now" class="quick-link-card">
-    <h3 class="quick-link-title">
-        <span class="quick-link-icon">🌱</span>
-        Now
-    </h3>
-</a>
-
 </div>
