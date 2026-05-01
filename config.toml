@@ -49,7 +49,7 @@ skin = "blue"
 # Website source code
 remote_repository_url = "https://github.com/lucasguesserts/lucasguesserts.github.io"
 remote_repository_git_platform = "auto"
-remote_repository_branch = "main"
+remote_repository_branch = "trunk"
 show_remote_changes = false
 show_remote_source = false
 
