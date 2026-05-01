@@ -104,8 +104,8 @@ footer_menu = [
     # { url = "sitemap.xml", name = "Sitemap", trailing_slash = false },
     # { url = "https://example.com", name = "external link", trailing_slash = true },
 ]
-copyright = "© $CURRENT_YEAR $AUTHOR $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
-copyright_translations.pt = "© $CURRENT_YEAR $AUTHOR $SEPARATOR A menos que se indique o contrário, o conteúdo deste site está disponível sob a licença [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
+copyright = "© $CURRENT_YEAR $AUTHOR $SEPARATOR [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
+copyright_translations.pt = "© $CURRENT_YEAR $AUTHOR $SEPARATOR [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
 
 # ===============================
 # Metadata
