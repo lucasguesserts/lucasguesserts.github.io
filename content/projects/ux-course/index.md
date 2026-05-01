@@ -1,7 +1,8 @@
 +++
 title = "UX Design Course"
+date = 2026-04-30
+updated = 2026-04-30
 description = "My journey learning UX design."
-weight = 2
 
 [extra]
 local_image = "projects/ux-course/ux.png"

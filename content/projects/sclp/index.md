@@ -1,7 +1,8 @@
 +++
 title = "3D SCLP"
+date = 2025-02-15
+updated = 2026-04-30
 description = "A tree search-based heuristic for the three-dimensional single container loading problem (Master's thesis)"
-weight = 2
 
 [extra]
 local_image = "projects/sclp/packing.png"
