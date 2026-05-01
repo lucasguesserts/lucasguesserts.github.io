@@ -88,7 +88,6 @@ socials = [
 footer_menu = [
     # { url = "about", name = "about", trailing_slash = true },
     # { url = "privacy", name = "privacy", trailing_slash = true },
-    # { url = "sitemap.xml", name = "Sitemap", trailing_slash = false },
     # { url = "https://example.com", name = "external link", trailing_slash = true },
 ]
 copyright = "© $CURRENT_YEAR $AUTHOR $SEPARATOR [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
