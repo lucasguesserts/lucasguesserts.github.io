@@ -24,11 +24,6 @@ build_search_index = true
 bottom_footnotes = true
 external_links_class = "external"
 
-[link_checker]
-skip_prefixes = [
-    "https://www.linkedin.com/in/lucasguesserts/",
-]
-
 [extra]
 show_selected_language_code_in_language_switcher = true
 
