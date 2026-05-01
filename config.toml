@@ -14,7 +14,7 @@ taxonomies = [
 ]
 
 compile_sass = true
-generate_sitemap = true
+generate_sitemap = false
 generate_robots_txt = true
 
 default_language = "en"
@@ -102,7 +102,7 @@ socials = [
 footer_menu = [
     # { url = "about", name = "about", trailing_slash = true },
     # { url = "privacy", name = "privacy", trailing_slash = true },
-    { url = "sitemap.xml", name = "Sitemap", trailing_slash = false },
+    # { url = "sitemap.xml", name = "Sitemap", trailing_slash = false },
     # { url = "https://example.com", name = "external link", trailing_slash = true },
 ]
 copyright = "© $CURRENT_YEAR $AUTHOR $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
