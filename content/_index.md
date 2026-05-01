@@ -11,8 +11,6 @@ a software engineer based in [Berlin](https://en.wikipedia.org/wiki/Berlin), Ger
 
 Here I share thoughts, experiences, and insights about software development, technology, and life.
 
-#### Quick links
-
 <div class="quick-links-grid">
 
 <a href="/blog" class="quick-link-card">
