@@ -40,8 +40,8 @@ skip_prefixes = [
 show_selected_language_code_in_language_switcher = true
 
 use_cdn = true
-comment = true
-iine = true
+comment = false
+iine = false
 
 # See https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards
 # Path to the fallback image for social media cards (the preview image shown when sharing a link on WhatsApp, LinkedIn…).
@@ -50,7 +50,7 @@ iine = true
 social_media_card = "images/profile-picture.jpg"
 
 # display both the created and the updated dates
-post_listing_date = "both"
+post_listing_date = "updated"
 
 # Projects
 projects_path = "projects/_index.md"
@@ -62,8 +62,8 @@ skin = "blue"
 remote_repository_url = "https://github.com/lucasguesserts/lucasguesserts.github.io"
 remote_repository_git_platform = "auto"
 remote_repository_branch = "main"
-show_remote_changes = true
-show_remote_source = true
+show_remote_changes = false
+show_remote_source = false
 
 # ===============================
 # Navigation
@@ -111,6 +111,7 @@ copyright_translations.pt = "© $CURRENT_YEAR $AUTHOR $SEPARATOR [CC BY-SA 4.0](
 # Metadata
 # https://welpo.github.io/tabi/blog/mastering-tabi-settings/#metadata
 # ===============================
-show_author = true
-show_reading_time = true
-show_date = true
+show_author = false
+show_reading_time = false
+show_date = false
+
