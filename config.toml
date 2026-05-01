@@ -65,8 +65,8 @@ menu = [
 ]
 quick_navigation_buttons = true
 toc = true
-show_previous_next_article_links = true
-invert_previous_next_article_links = true
+show_previous_next_article_links = false
+invert_previous_next_article_links = false
 
 # ===============================
 # Usability
